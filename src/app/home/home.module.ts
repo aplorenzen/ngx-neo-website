@@ -7,6 +7,7 @@ import { SharedModule } from '@app/shared';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { QuoteService } from './quote.service';
     HomeRoutingModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    BannerComponent
   ],
   providers: [
     QuoteService
