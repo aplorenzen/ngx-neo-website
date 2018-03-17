@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -13,6 +14,7 @@ import { BannerComponent } from './banner/banner.component';
   imports: [
     CommonModule,
     TranslateModule,
+    NgbModule,
     CoreModule,
     SharedModule,
     HomeRoutingModule
