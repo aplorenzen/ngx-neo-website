@@ -4,11 +4,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { I18nService } from '../../i18n.service';
-import { HeaderComponent } from './header.component';
+import { NavbarComponent } from './navbar.component';
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('NavbarComponent', () => {
+  let component: NavbarComponent;
+  let fixture: ComponentFixture<NavbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,7 +17,7 @@ describe('HeaderComponent', () => {
         NgbModule.forRoot(),
         TranslateModule.forRoot()
       ],
-      declarations: [HeaderComponent],
+      declarations: [NavbarComponent],
       providers: [
         I18nService
       ]
@@ -26,7 +26,7 @@ describe('HeaderComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

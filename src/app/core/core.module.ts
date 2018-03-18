@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ShellComponent } from './shell/shell.component';
-import { HeaderComponent } from './shell/header/header.component';
+import { NavbarComponent } from './shell/navbar/navbar.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { I18nService } from './i18n.service';
 import { HttpService } from './http/http.service';
@@ -25,7 +25,7 @@ import { ScrollClassDirective } from '@app/shared/scroll-class.directive';
     RouterModule
   ],
   declarations: [
-    HeaderComponent,
+    NavbarComponent,
     ShellComponent,
     ScrollClassDirective
   ],

@@ -4,10 +4,10 @@ import { I18nService } from '../../i18n.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class HeaderComponent {
+export class NavbarComponent {
 
   menuHidden = true;
 
