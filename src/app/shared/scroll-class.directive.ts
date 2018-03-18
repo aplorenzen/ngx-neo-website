@@ -1,5 +1,9 @@
-import {Directive, ElementRef, HostBinding, HostListener, Input, Renderer2} from '@angular/core';
-import {RElement} from '@angular/core/src/render3/renderer';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[appScrollClass]'
@@ -18,14 +22,21 @@ export class ScrollClassDirective {
     this.windowScrollEvent($event);
   }
 
-  protected windowScrollEvent($event: Event) {
-    const scrollTop = (<Document>$event.target).documentElement.scrollTop
-      || (<Document>$event.target).body.scrollTop;
-
+  public applyDirective(scrollTop: number) {
     if (scrollTop > this.appScrollOffset) {
       this.renderer.addClass(this.elementRef.nativeElement, this.cssClass);
     } else {
       this.renderer.removeClass(this.elementRef.nativeElement, this.cssClass);
     }
+  }
+
+  protected windowScrollEvent($event: Event) {
+    // Some browsers have a preference for setting the scroll Y offset in
+    // different places. We take the document from the event here, and
+    // locate any offset value that is defined and non zero.
+    const scrollTop = (<Document>$event.target).documentElement.scrollTop
+      || (<Document>$event.target).body.scrollTop;
+
+    this.applyDirective(scrollTop);
   }
 }
