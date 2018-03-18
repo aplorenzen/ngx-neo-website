@@ -1,14 +1,17 @@
-import {Directive, ElementRef, HostBinding, HostListener, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Input, Renderer2} from '@angular/core';
+import {RElement} from '@angular/core/src/render3/renderer';
 
 @Directive({
   selector: '[appScrollClass]'
 })
 export class ScrollClassDirective {
 
-  constructor() {}
+  constructor(private elementRef: ElementRef,
+              private renderer: Renderer2) {
+  }
 
-  @HostBinding('class.navbar-shrink')
-  private applyClass = false;
+  @Input('appScrollClass') public cssClass: string;
+  @Input() public appScrollOffset = 100;
 
   @HostListener('window:scroll', ['$event'])
   public windowScrolled($event: Event) {
@@ -16,18 +19,13 @@ export class ScrollClassDirective {
   }
 
   protected windowScrollEvent($event: Event) {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    // const isReachingTop = scrollTop < 100;
-    // console.log(scrollTop);
-    // this.renderer.addClass(this.elementRef.nativeElement, 'navbar-shrink');
-    this.applyClass = true;
+    const scrollTop = (<Document>$event.target).documentElement.scrollTop
+      || (<Document>$event.target).body.scrollTop;
 
-    if (scrollTop > 100) {
-      this.applyClass = true;
-      // this.renderer.addClass(this.elementRef.nativeElement, 'navbar-shrink');
+    if (scrollTop > this.appScrollOffset) {
+      this.renderer.addClass(this.elementRef.nativeElement, this.cssClass);
     } else {
-      this.applyClass = false;
-      // this.renderer.removeClass(this.elementRef.nativeElement, 'navbar-shrink');
+      this.renderer.removeClass(this.elementRef.nativeElement, this.cssClass);
     }
   }
 }
