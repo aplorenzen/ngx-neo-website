@@ -1,9 +1,24 @@
 @import "src/theme/theme-variables";
 
-.navbar {
-  margin-bottom: $spacer;
-}
-
 .nav-link.dropdown-toggle {
   cursor: pointer;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+  background-color: #fff;
+  font-family: "Open Sans','Helvetica Neue", Arial, sans-serif;
+  transition: all 0.2s;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  .navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
 }
