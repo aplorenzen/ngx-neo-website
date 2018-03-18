@@ -11,7 +11,7 @@ import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ScrollClassDirective } from './scroll-class.directive';
+import { ScrollClassDirective } from './shared/scroll-class.directive';
 
 @NgModule({
   imports: [
