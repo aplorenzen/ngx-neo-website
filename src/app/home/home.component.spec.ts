@@ -5,6 +5,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
+import {BannerComponent} from '@app/home/banner/banner.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -17,7 +18,7 @@ describe('HomeComponent', () => {
           SharedModule,
           HttpClientTestingModule
         ],
-        declarations: [HomeComponent],
+        declarations: [HomeComponent, BannerComponent],
         providers: [QuoteService]
       })
       .compileComponents();

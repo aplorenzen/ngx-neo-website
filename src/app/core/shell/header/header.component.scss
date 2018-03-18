@@ -11,6 +11,34 @@
   transition: all 0.2s;
 }
 
+.navbar-shrink {
+  border-bottom: 1px solid rgba(33, 37, 41, .1);
+  background-color: #fff
+}
+
+
+.navbar-shrink {
+  border-bottom: 1px solid rgba(33, 37, 41, .1);
+  background-color: #fff
+}
+.navbar-shrink .navbar-brand {
+  color: #f05f40
+}
+.navbar-shrink .navbar-brand:focus,
+.navbar-shrink .navbar-brand:hover {
+  color: #f05f40;
+}
+
+.navbar-shrink .navbar-nav > .nav-item > .nav-link,
+.navbar-shrink .navbar-nav > .nav-item > .nav-link:focus {
+  color: #212529;
+}
+
+.navbar-shrink .navbar-nav > .nav-item > .nav-link:focus:hover,
+.navbar-shrink .navbar-nav > .nav-item > .nav-link:hover {
+  color: #f05f40;
+}
+
 @media (min-width: 992px) {
   .navbar {
     border-color: transparent;
