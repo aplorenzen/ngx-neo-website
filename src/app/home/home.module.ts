@@ -11,6 +11,7 @@ import { QuoteService } from './quote.service';
 import { BannerComponent } from './banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
   declarations: [
     HomeComponent,
     BannerComponent,
-    ProfileComponent
+    ProfileComponent,
+    SkillsComponent
   ],
   providers: [
     QuoteService
