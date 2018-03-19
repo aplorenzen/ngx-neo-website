@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
+  maxRating = 8;
+
+  skillRating = {
+    docker: 7,
+    angular: 5.8,
+    java: 6.7,
+  };
+
   constructor() { }
 
   ngOnInit() {
