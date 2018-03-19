@@ -1,0 +1,59 @@
+@import "../../../theme/theme-variables";
+
+/*.banner {
+  height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-image: url("../../../assets/more-coffee-desktop-background-18.jpeg");
+  background-position: center center;
+  background-size: cover;
+}
+*/
+
+.banner {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background: url("../../../assets/more-coffee-desktop-background-18.jpeg") center center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  background-size: cover;
+}
+
+.banner hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.banner h1 {
+  font-size: 2rem;
+}
+
+.banner p {
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .banner p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .banner {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .banner h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .banner h1 {
+    font-size: 4rem;
+  }
+}

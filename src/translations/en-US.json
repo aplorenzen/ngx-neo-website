@@ -1,5 +1,5 @@
 {
-  "APP_NAME": "ngx-neo-website",
+  "application.name": "neoprime.it",
   "About": "About",
   "Hello world !": "Hello world !",
   "Home": "Home",

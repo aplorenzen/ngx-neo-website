@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import { I18nService } from '../../i18n.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class NavbarComponent {
 
   menuHidden = true;
 
-  constructor(private i18nService: I18nService) { }
-
-  ngOnInit() { }
+  constructor(private i18nService: I18nService) {}
 
   toggleMenu() {
     this.menuHidden = !this.menuHidden;
