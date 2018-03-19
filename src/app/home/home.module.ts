@@ -10,6 +10,7 @@ import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
 import { BannerComponent } from './banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './profile/profile.component';
     NgbModule,
     CoreModule,
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    NgxPageScrollModule
   ],
   declarations: [
     HomeComponent,
