@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { I18nService } from '../../i18n.service';
 import { NavbarComponent } from './navbar.component';
+import {NgxPageScrollModule} from 'ngx-page-scroll';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -15,9 +16,12 @@ describe('NavbarComponent', () => {
       imports: [
         RouterTestingModule,
         NgbModule.forRoot(),
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
+        NgxPageScrollModule
       ],
-      declarations: [NavbarComponent],
+      declarations: [
+        NavbarComponent
+      ],
       providers: [
         I18nService
       ]
