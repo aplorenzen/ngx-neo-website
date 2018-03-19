@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BannerComponent } from './banner.component';
+import {NgxPageScrollModule} from 'ngx-page-scroll';
 
 describe('BannerComponent', () => {
   let component: BannerComponent;
@@ -8,7 +9,12 @@ describe('BannerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
+      imports: [
+        NgxPageScrollModule
+      ],
+      declarations: [
+        BannerComponent
+      ]
     })
     .compileComponents();
   }));

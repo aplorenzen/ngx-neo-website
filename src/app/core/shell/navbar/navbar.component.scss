@@ -1,5 +1,9 @@
 @import "../../../../theme/theme-variables";
 
+.nav-link {
+  cursor: pointer;
+}
+
 .nav-link.dropdown-toggle {
   cursor: pointer;
 }

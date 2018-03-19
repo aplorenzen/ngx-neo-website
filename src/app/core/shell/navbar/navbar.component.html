@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top neo-navbar"
      appScrollClass="navbar-shrink"
      appScrollOffset="100">
-  <a class="navbar-brand" routerLink="/" translate>application.name</a>
+  <a class="navbar-brand" pageScroll pageScrollTarget="#pagetop" [pageScrollDuration]="500" [routerLink]="['/home']" translate>application.name</a>
   <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
           aria-label="Toggle navigation" (click)="toggleMenu()" [attr.aria-expanded]="!menuHidden">
     <span class="navbar-toggler-icon"></span>
@@ -9,13 +9,13 @@
   <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
     <div class="navbar-nav neo-navbar-nav">
       <div class="nav-item">
-        <a class="nav-link text-uppercase" routerLink="/home" routerLinkActive="active">
+        <a class="nav-link text-uppercase" pageScroll pageScrollTarget="#pagetop" [pageScrollDuration]="500">
           <i class="fas fa-home"></i>
           <span translate>Home</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" routerLink="/about" routerLinkActive="active">
+        <a class="nav-link text-uppercase" pageScroll pageScrollTarget="#profile" [pageScrollDuration]="500">
           <i class="fas fa-question-circle"></i>
           <span translate>About</span>
         </a>
