@@ -20,9 +20,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "main.scss"
+        "main.scss",
+        "../node_modules/pace-progress/themes/black/pace-theme-flash.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/pace-progress/pace.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
