@@ -9,6 +9,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
 import { BannerComponent } from './banner/banner.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { BannerComponent } from './banner/banner.component';
   ],
   declarations: [
     HomeComponent,
-    BannerComponent
+    BannerComponent,
+    ProfileComponent
   ],
   providers: [
     QuoteService
