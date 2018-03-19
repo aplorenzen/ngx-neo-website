@@ -38,14 +38,14 @@ $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 
-$theme-pri:  #f05f40;
-$theme-sec:  $white;
-$theme-dark: #212529;
-$theme-gray: #343a40;
+$theme-primary:   #f05f40;
+$theme-secondary: $white;
+$theme-dark:      #212529;
+$theme-gray:      #343a40;
 
 $theme-colors: (
-  primary: $theme-pri,
-  secondary: $theme-sec,
+  primary: $theme-primary,
+  secondary: $theme-secondary,
   success: $green,
   info: $cyan,
   warning: $yellow,
