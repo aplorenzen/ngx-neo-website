@@ -9,6 +9,7 @@ import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
 import { BannerComponent } from '@app/home/banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SkillsComponent } from '@app/home/skills/skills.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -25,7 +26,8 @@ describe('HomeComponent', () => {
         declarations: [
           HomeComponent,
           BannerComponent,
-          ProfileComponent
+          ProfileComponent,
+          SkillsComponent
         ],
         providers: [QuoteService]
       })
