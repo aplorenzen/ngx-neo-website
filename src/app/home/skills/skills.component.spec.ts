@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SkillsComponent } from './skills.component';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 describe('SkillsComponent', () => {
   let component: SkillsComponent;
@@ -8,7 +9,12 @@ describe('SkillsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SkillsComponent ]
+      imports: [
+        BarRatingModule
+      ],
+      declarations: [
+        SkillsComponent
+      ]
     })
     .compileComponents();
   }));

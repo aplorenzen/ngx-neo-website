@@ -4,3 +4,17 @@
   width: 128px;
   height: 128px;
 }
+
+.rank-container {
+  height: 50px;
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  display: flex;
+  //-webkit-box-pack: center;
+  //-ms-flex-pack: center;
+  justify-content: center;
+  //-webkit-box-align: center;
+  //-ms-flex-align: center;
+  align-items: center;
+  padding: 15px;
+}
