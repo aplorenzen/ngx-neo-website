@@ -68,6 +68,7 @@
 
     <div class="card-deck">
       <div class="card">
+        <h5 class="card-header">Spring Boot</h5>
         <div class="text-center">
           <img class="skill-image center-block card-img-top" src="../../../assets/logo_spring-boot.png" alt="Card image cap">
         </div>
@@ -148,7 +149,9 @@
         </div>
       </div>
       <div class="card">
-        <img class="skill-image card-img-top" src="../../../assets/logo_angular.png" alt="Card image cap">
+        <div class="text-center">
+          <img class="skill-image card-img-top" src="../../../assets/logo_angular.png" alt="Card image cap">
+        </div>
         <div class="card-body">
           <div class="rank-container">
             <bar-rating
@@ -165,7 +168,9 @@
         </div>
       </div>
       <div class="card">
-        <img class="skill-image card-img-top" src="../../../assets/logo_linux_2.png" alt="Card image cap">
+        <div class="text-center">
+          <img class="skill-image card-img-top" src="../../../assets/logo_linux_2.png" alt="Card image cap">
+        </div>
         <div class="card-body">
           <div class="rank-container">
             <bar-rating
@@ -184,6 +189,53 @@
       </div>
     </div>
   </div>
+
+  <div class="container">
+
+    <div class="card-deck">
+      <div class="card">
+        <h5 class="card-header">Spring Boot</h5>
+        <div class="text-center">
+          <img class="skill-image card-img-top" src="../../../assets/logo_spring-boot.png" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <div class="rank-container">
+            <bar-rating
+              [rate]="skillRating.docker"
+              [max]="maxRating"
+              [theme]="'default'"
+              [readOnly]="true"></bar-rating>
+          </div>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+
+      <div class="card">
+          <h5 class="card-header"><span><img style="width: 32px; height: 32px; margin-right: 8px;" src="../../../assets/logo_linux_2.png"></span>Linux</h5>
+
+        <div class="rank-container">
+          <bar-rating
+            [rate]="skillRating.docker"
+            [max]="maxRating"
+            [theme]="'default'"
+            [readOnly]="true"></bar-rating>
+        </div>
+
+        <div class="card-body">
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 </section>
