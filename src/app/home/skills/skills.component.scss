@@ -1,4 +1,5 @@
 @import "../../../theme/theme-variables";
+@import "~bootstrap/scss/bootstrap-grid.scss";
 
 .skill-image {
   width: 128px;
@@ -17,4 +18,34 @@
   //-ms-flex-align: center;
   align-items: center;
   padding: 15px;
+}
+
+.card-deck {
+  justify-content: center;
+
+  .card {
+    min-width: 300px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    @include media-breakpoint-up(sm) {
+      // 2-up
+      flex: 0 0 calc(100%/2 - 30px); // Subtract left+right margin
+    }
+
+    @include media-breakpoint-up(md) {
+      // 3-up
+      flex: 0 0 calc(100%/3 - 30px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      // 4-up
+      flex: 0 0 calc(100%/4 - 30px);
+    }
+
+    @include media-breakpoint-up(xl) {
+      // 5-up
+      flex: 0 0 calc(100%/5 - 30px);
+    }
+  }
 }
