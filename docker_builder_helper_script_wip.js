@@ -2,4 +2,5 @@
 // from the projectname, the branch and the version
 
 var pjson = require('./package.json');
-console.log(pjson.version);
+// console.log(pjson.version);
+process.stdout.write('test');

@@ -2,6 +2,9 @@
   "name": "ngx-neo-website",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "docker-reportsitory": "docker.neoprime.it"
+  },
   "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
