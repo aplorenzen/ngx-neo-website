@@ -10,13 +10,24 @@ FROM httpd:alpine
 #
 #          }
 COPY ./ /usr/local/apache2/htdocs/
+COPY ./conf/httpd.conf /usr/local/apache2/conf/httpd.conf
 
-RUN rm /usr/local/apache2/htdocs/Dockerfile
+RUN rm -rf /usr/local/apache2/htdocs/conf
+
+  #/usr/local/apache2/htdocs/Dockerfile \
+
 
 # Rewrite the httpd.conf, and enable the rewrite module if disabled.
-RUN sed -i -e \
-  's/#LoadModule rewrite_module modules\/mod_rewrite.so/LoadModule rewrite_module modules\/mod_rewrite.so/g' \
-  /usr/local/apache2/conf/httpd.conf
+# RUN sed -i -e \
+#   's/#LoadModule rewrite_module modules\/mod_rewrite.so/LoadModule rewrite_module modules\/mod_rewrite.so/g' \
+#   /usr/local/apache2/conf/httpd.conf
+
+RUN chown -R www-data:www-data \
+  /usr/local/apache2/htdocs/* \
+  /usr/local/apache2/htdocs/.htaccess
+
+RUN chmod 444 \
+  /usr/local/apache2/htdocs/.htaccess
 
 
 
