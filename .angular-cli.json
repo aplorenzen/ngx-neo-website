@@ -15,6 +15,11 @@
           "glob": "Dockerfile",
           "input": "docker/httpd/",
           "output": "./"
+        },
+        {
+          "glob": ".htaccess",
+          "input": "docker/httpd/",
+          "output": "./"
         }
       ],
       "index": "index.html",

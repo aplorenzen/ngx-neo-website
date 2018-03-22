@@ -11,9 +11,12 @@ FROM httpd:alpine
 #          }
 COPY ./ /usr/local/apache2/htdocs/
 
+RUN rm /usr/local/apache2/htdocs/Dockerfile
+
 # Rewrite the httpd.conf, and enable the rewrite module if disabled.
 RUN sed -i -e \
   's/#LoadModule rewrite_module modules\/mod_rewrite.so/LoadModule rewrite_module modules\/mod_rewrite.so/g' \
   /usr/local/apache2/conf/httpd.conf
+
 
 
