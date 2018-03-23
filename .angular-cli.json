@@ -10,7 +10,27 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "robots.txt"
+        "robots.txt",
+        {
+          "glob": "Dockerfile",
+          "input": "docker/httpd/",
+          "output": "./"
+        },
+        {
+          "glob": ".htaccess",
+          "input": "docker/httpd/",
+          "output": "./"
+        },
+        {
+          "glob": "httpd.conf",
+          "input": "docker/httpd/conf/",
+          "output": "./conf/"
+        },
+        {
+          "glob": ".dockerignore",
+          "input": "docker/httpd/",
+          "output": "./"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
