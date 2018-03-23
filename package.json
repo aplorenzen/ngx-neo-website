@@ -1,7 +1,10 @@
 {
   "name": "ngx-neo-website",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
+  "config": {
+    "docker-reportsitory": "docker.neoprime.it"
+  },
   "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
@@ -13,7 +16,8 @@
     "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean -sort --marker extract",
     "docs": "hads ./docs -o",
     "env": "ngx-scripts env npm_package_version",
-    "generate": "ng generate"
+    "generate": "ng generate",
+    "docker:build": "bash -c ./get_docker_image_name.sh | xargs -0 -I % docker build -t % dist/"
   },
   "dependencies": {
     "@angular/animations": "^5.2.5",
