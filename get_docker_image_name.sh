@@ -1,5 +1,7 @@
 #!/bin/bash
+
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
 # echo $BRANCH_NAME
 
 # Version key/value should be on his own line
@@ -19,14 +21,14 @@ PROJECT_NAME=$(cat package.json \
 
 # echo $PROJECT_NAME
 
-if [ -n "$1" ]; then 
+if [ -n "$1" ]; then
   ENVIRONMENT=$1;
 fi
 
 IMAGE_NAME="$PROJECT_NAME:$PACKAGE_VERSION-$BRANCH_NAME"
 
-if [ -n "$ENVIRONMENT" ]; then 
+if [ -n "$ENVIRONMENT" ]; then
   IMAGE_NAME="$IMAGE_NAME-$ENVIRONMENT";
 fi
 
-echo $IMAGE_NAME
+printf "$IMAGE_NAME"

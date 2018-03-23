@@ -17,7 +17,7 @@
     "docs": "hads ./docs -o",
     "env": "ngx-scripts env npm_package_version",
     "generate": "ng generate",
-    "docker:build": "docker build -t ng_test:latest dist/"
+    "docker:build": "bash -c ./get_docker_image_name.sh | xargs -0 -I % docker build -t % dist/"
   },
   "dependencies": {
     "@angular/animations": "^5.2.5",
