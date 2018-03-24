@@ -88,6 +88,10 @@
 .skill-card {
   max-width: 400px;
   min-width: 290px;
+
+  .card {
+    // box-shadow: 0 0 10px #343a40;
+  }
 }
 
 @media (min-width: 1400px) {
