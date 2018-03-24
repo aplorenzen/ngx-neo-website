@@ -1,25 +1,47 @@
 @import "../../../theme/theme-variables";
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
+.skill-image-span {
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.rank-text {
+  font-weight: 600;
+  font-size: 1.45rem;
+}
+
+.card-header {
+  display: flex;
+}
+
 .skill-image {
-  width: 128px;
-  height: 128px;
-  margin-top: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .rank-container {
   // height: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
+  // justify-content: flex-end;
+  // align-items: center;
+
+  padding: 0px;
+  margin-bottom: 10px;
 }
 
-.card-deck {
+.card {
+  min-width: 290px;
+  // max-width: 400px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/*.card-deck {
   justify-content: center;
 
   .card {
-    min-width: 290px;
+    min-width: 500px;
     margin-bottom: 15px;
     margin-top: 15px;
 
@@ -43,4 +65,68 @@
       flex: 0 0 calc(100%/5 - 30px);
     }
   }
+}*/
+
+.skills-card-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills-card-row > div[class*="col-"] {
+  display: flex;
+}
+
+.skill-card {
+  max-width: 400px;
+  min-width: 290px;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1330px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1425px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1710px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1900px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .container {
+    max-width: 2090px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .container {
+    max-width: 2280px;
+  }
+}
+
+.rating-bar {
+  height: 32px;
+  position: relative;
+  top: -16px;
+  margin-left: auto;
+  margin-right: 0px;
 }

@@ -10,7 +10,9 @@
       </div>
     </div>
   </div>
-  <div class="container">
+
+
+  <!-- <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box mt-5 mx-auto">
@@ -62,124 +64,112 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="container">
+    <div class="row skills-card-row">
 
-    <div class="card-deck">
-      <div class="card">
-        <h5 class="card-header">Spring Boot</h5>
-        <div class="text-center">
-          <img class="skill-image center-block card-img-top" src="../../../assets/logo_spring-boot.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Spring Boot</h5>
-          <div class="rank-container">
-            <bar-rating
-              [rate]="skillRating.docker"
-              [max]="maxRating"
-              [theme]="'default'"
-              [readOnly]="true"></bar-rating>
+      <div class="col-sm-2 skill-card mx-auto">
+        <div class="card">
+          <h5 class="card-header">
+            Spring Boot
+            <span class="skill-image-span">
+              <img class="skill-image" src="../../../assets/logo_spring-boot.png">
+            </span>
+          </h5>
+          <div class="card-body">
+            <div class="rank-container">
+              <p class="rank-text">7/8</p>
+              <bar-rating
+                class="rating-bar "
+                [rate]="skillRating.docker"
+                [max]="maxRating"
+                [theme]="'default'"
+                [readOnly]="true"></bar-rating>
+            </div>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
         </div>
       </div>
 
-      <div class="card">
-        <img class="skill-image card-img-top" src="../../../assets/logo_angular.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="rank-container">
-            <bar-rating
-              [rate]="skillRating.docker"
-              [max]="maxRating"
-              [theme]="'default'"
-              [readOnly]="true"></bar-rating>
+      <div class="col-sm-2 skill-card mx-auto">
+        <div class="card">
+          <h5 class="card-header">
+            Angular
+            <span class="skill-image-span">
+              <img class="skill-image" src="../../../assets/logo_angular.png">
+            </span>
+          </h5>
+
+          <div class="card-body">
+            <div class="rank-container">
+              <p class="rank-text">7/8</p>
+              <bar-rating
+                class="rating-bar"
+                [rate]="skillRating.docker"
+                [max]="maxRating"
+                [theme]="'default'"
+                [readOnly]="true"></bar-rating>
+            </div>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
-          <h5 class="card-title">Angular</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
         </div>
       </div>
 
-      <div class="card">
-        <img class="skill-image card-img-top" src="../../../assets/logo_linux_2.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="rank-container">
-            <bar-rating
-              [rate]="skillRating.docker"
-              [max]="maxRating"
-              [theme]="'default'"
-              [readOnly]="true"></bar-rating>
+      <div class="col-sm-2 skill-card mx-auto">
+        <div class="card">
+          <h5 class="card-header">
+            Linux
+            <span class="skill-image-span">
+              <img class="skill-image" src="../../../assets/logo_linux_2.png">
+            </span>
+          </h5>
+
+          <div class="card-body">
+            <div class="rank-container">
+              <p class="rank-text">7/8</p>
+              <bar-rating
+                class="rating-bar"
+                [rate]="skillRating.docker"
+                [max]="maxRating"
+                [theme]="'default'"
+                [readOnly]="true"></bar-rating>
+            </div>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
-          <h5 class="card-title">Linux</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content. This card has even longer content than the first to show that equal height action.</p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
         </div>
       </div>
 
+      <div class="col-sm-2 skill-card mx-auto">
+      <div class="card">
+        <h5 class="card-header">
+          Java
+          <span class="skill-image-span">
+              <img class="skill-image" src="../../../assets/logo_java_4.png">
+            </span>
+        </h5>
 
-      <div class="card">
-        <img class="skill-image card-img-top" src="../../../assets/logo_spring-boot.png" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Spring Boot</h5>
           <div class="rank-container">
+            <p class="rank-text">7/8</p>
             <bar-rating
+              class="rating-bar"
               [rate]="skillRating.docker"
               [max]="maxRating"
               [theme]="'default'"
               [readOnly]="true"></bar-rating>
           </div>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="text-center">
-          <img class="skill-image card-img-top" src="../../../assets/logo_angular.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <div class="rank-container">
-            <bar-rating
-              [rate]="skillRating.docker"
-              [max]="maxRating"
-              [theme]="'default'"
-              [readOnly]="true"></bar-rating>
-          </div>
-          <h5 class="card-title">Angular</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="text-center">
-          <img class="skill-image card-img-top" src="../../../assets/logo_linux_2.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <div class="rank-container">
-            <bar-rating
-              [rate]="skillRating.docker"
-              [max]="maxRating"
-              [theme]="'default'"
-              [readOnly]="true"></bar-rating>
-          </div>
-          <h5 class="card-title">Linux</h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
             content. This card has even longer content than the first to show that equal height action.</p>
           <p class="card-text">
@@ -188,9 +178,67 @@
         </div>
       </div>
     </div>
+
+      <div class="col-sm-2 skill-card mx-auto">
+        <div class="card">
+          <h5 class="card-header">
+            Docker
+            <span class="skill-image-span">
+              <img class="skill-image" src="../../../assets/logo_docker_2.png">
+            </span>
+          </h5>
+
+          <div class="card-body">
+            <div class="rank-container">
+              <p class="rank-text">7/8</p>
+              <bar-rating
+                class="rating-bar"
+                [rate]="skillRating.docker"
+                [max]="maxRating"
+                [theme]="'default'"
+                [readOnly]="true"></bar-rating>
+            </div>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2 skill-card mx-auto">
+        <div class="card">
+          <h5 class="card-header">
+            Bash
+            <span class="skill-image-span">
+              <img class="skill-image" src="../../../assets/logo_bash.png">
+            </span>
+          </h5>
+
+          <div class="card-body">
+            <div class="rank-container">
+              <p class="rank-text">7/8</p>
+              <bar-rating
+                class="rating-bar"
+                [rate]="skillRating.docker"
+                [max]="maxRating"
+                [theme]="'default'"
+                [readOnly]="true"></bar-rating>
+            </div>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="container">
+  <!-- <div class="container">
 
     <div class="card-deck">
       <div class="card">
@@ -215,7 +263,8 @@
       </div>
 
       <div class="card">
-          <h5 class="card-header"><span><img style="width: 32px; height: 32px; margin-right: 8px;" src="../../../assets/logo_linux_2.png"></span>Linux</h5>
+        <h5 class="card-header"><span><img style="width: 32px; height: 32px; margin-right: 8px;"
+                                           src="../../../assets/logo_linux_2.png"></span>Linux</h5>
 
         <div class="rank-container">
           <bar-rating
@@ -234,8 +283,58 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
+  <ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1" title="Simple">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+        officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+        tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+        helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+        Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+        accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-2">
+      <ng-template ngbPanelTitle>
+        <span>&#9733; <b>Fancy</b> title &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+        officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+        tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+        helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+        Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+        accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-3" title="Disabled" [disabled]="true">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+        officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+        tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+        helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+        Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+        accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 
 
 </section>
