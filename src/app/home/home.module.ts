@@ -13,6 +13,7 @@ import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
 import { BannerComponent } from './banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { SkillsComponent } from './skills/skills.component';
     HomeComponent,
     BannerComponent,
     ProfileComponent,
+    FooterComponent
     SkillsComponent
   ],
   providers: [
