@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# TODO: Get the registry name (docker.neoprime.it)
+# TODO: Get the namespace name in the registry (neo)
+# TODO: Find a way to get the envionrment of the target build, and pass it to this script
+
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
 # echo $BRANCH_NAME
