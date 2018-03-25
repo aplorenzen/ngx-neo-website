@@ -31,8 +31,8 @@ import { SkillsComponent } from './skills/skills.component';
     HomeComponent,
     BannerComponent,
     ProfileComponent,
+    SkillsComponent,
     FooterComponent
-    SkillsComponent
   ],
   providers: [
     QuoteService
