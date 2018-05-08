@@ -44,7 +44,8 @@
         "../node_modules/pace-progress/themes/black/pace-theme-flash.css"
       ],
       "scripts": [
-        "../node_modules/pace-progress/pace.js"
+        "../node_modules/pace-progress/pace.js",
+        "../node_modules/scrollreveal/dist/scrollreveal.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

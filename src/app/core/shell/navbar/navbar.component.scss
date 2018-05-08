@@ -12,7 +12,16 @@
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: $theme-secondary;
   font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-  transition: all 0.2s;
+}
+
+.navbar-close-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
 }
 
 .neo-navbar .navbar-brand {
@@ -49,7 +58,7 @@
   background-color: transparent;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 576px) {
   .neo-navbar {
     border-color: transparent;
     background-color: transparent;
@@ -101,4 +110,12 @@
   .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:hover {
     color: $theme-primary;
   }
+}
+.neo-navbar-menu {
+  display: block;
+  top: 0px;
+}
+
+.dropdown-menu {
+  margin-bottom: 6px;
 }
