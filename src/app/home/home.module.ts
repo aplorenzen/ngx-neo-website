@@ -15,6 +15,8 @@ import { BannerComponent } from './banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
+import {NgsRevealModule} from 'ng-scrollreveal';
+
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { SkillsComponent } from './skills/skills.component';
     SharedModule,
     HomeRoutingModule,
     NgxPageScrollModule,
-    BarRatingModule
+    BarRatingModule,
+    NgsRevealModule
   ],
   declarations: [
     HomeComponent,
