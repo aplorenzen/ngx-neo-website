@@ -26,8 +26,7 @@ node {
     // def customImage = docker.build("neo/neo-website:${env.BUILD_ID}", "-f target/Dockerfile target/")
     def customImage = docker.build(imageName, "-f ./Dockerfile dist/")
       /* Push the container to the custom Registry */
-      customImage.push()
-    }
+    customImage.push()
   }
 
 //  stage('Push docker image') {
