@@ -7,6 +7,7 @@ node {
 
   stage('Build') {
     docker.image('node:9-alpine').inside {
+      sh 'npm install'
       sh 'npm run build'
     }
 
