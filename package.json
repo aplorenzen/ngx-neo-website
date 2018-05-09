@@ -1,9 +1,10 @@
 {
   "name": "ngx-neo-website",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "license": "MIT",
   "private": true,
   "config": {
-    "docker-reportsitory": "docker.neoprime.it"
+    "docker-namespace": "aplorenzen"
   },
   "scripts": {
     "ng": "ng",
@@ -17,7 +18,8 @@
     "docs": "hads ./docs -o",
     "env": "ngx-scripts env npm_package_version",
     "generate": "ng generate",
-    "docker:build": "bash -c ./get_docker_image_name.sh | xargs -0 -I % docker build -t % dist/"
+    "docker:build": "npm run build && bash -c ./get_docker_image_name.sh | xargs -0 -I % docker build -f ./Dockerfile -t % dist/",
+    "docker:push": "bash -c ./get_docker_image_name.sh | xargs -0 -I % docker push %"
   },
   "dependencies": {
     "@angular/animations": "^5.2.10",
