@@ -5,13 +5,29 @@ node {
 
   checkout scm
 
-  stage('Build') {
+  stage('Install Dependencies') {
     docker.image('node:9-alpine').inside {
       sh 'npm install'
+    }
+  }
+
+  stage('Build') {
+    docker.image('node:9-alpine').inside {
       sh 'npm run build'
     }
 
-    junit 'reports/junit/*.xml'
+    // junit 'reports/junit/*.xml'
+  }
+
+  stage('Build Docker') {
+
+    def imageName = sh returnStdout: true, script: './get_docker_image_name.sh'
+
+    // def customImage = docker.build("neo/neo-website:${env.BUILD_ID}", "-f target/Dockerfile target/")
+    def customImage = docker.build(imageName, "-f ./Dockerfile dist/")
+      /* Push the container to the custom Registry */
+      customImage.push()
+    }
   }
 
 //  stage('Push docker image') {
