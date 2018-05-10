@@ -3,7 +3,7 @@
 # TODO: Update the script so that it takes care of all the failure scenarios, and informs and helps the user
 
 # Grab the git branch name
-BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD \
+BRANCH_NAME=$(git show -s --pretty=%d HEAD | grep -Po "/\K[^.*)]*" \
   | sed 's/\r//g')
 
 # Version key/value should be on its own line, cleaning the string
