@@ -5,29 +5,61 @@ node {
 
   checkout scm
 
+  /* Before we can start, we need to secure that the dependencies of the project are in installed */
   stage('Install Dependencies') {
     docker.image('node:9-alpine').inside {
       sh 'npm install'
     }
   }
 
-  stage('Build') {
+  /* This step runs the unit tests for the angular project */
+  /* stage('Test Application') {
+    docker.image('node:9-alpine').inside {
+      sh 'npm run test'
+    }
+
+    junit 'reports/junit/*.xml'
+  } */
+
+  /* This step builds the angular application, leaves it in the default dist/ directory */
+  stage('Build Application') {
     docker.image('node:9-alpine').inside {
       sh 'npm run build'
     }
-
-    // junit 'reports/junit/*.xml'
   }
 
-  stage('Build Docker') {
+  /* Local varables for holding the docker image and the image name */
+  def imageName
+  def dockerImage
 
-    def imageName = sh returnStdout: true, script: './get_docker_image_name.sh'
+  /* This step just builds the image, and leaves it in the local image cache, tagged */
+  stage('Build Docker Image') {
 
-    // def customImage = docker.build("neo/neo-website:${env.BUILD_ID}", "-f target/Dockerfile target/")
-    def customImage = docker.build(imageName, "dist/")
-      /* Push the container to the custom Registry */
-    customImage.push()
+    /* Determine the image name */
+    imageName = sh returnStdout: true, script: './get_docker_image_name.sh'
+
+    /* Build the docker image, from the project root directory, with the dist/ directory as the build context */
+    /* docker build -t <imagename> dist/ */
+    dockerImage = docker.build(imageName, "dist/")
   }
+
+  stage('Push Docker Image') {
+    /* Push the container to the custom Registry */
+
+    /* Finally, we'll push the image with two tags:
+       * First, the incremental build number from Jenkins
+       * Second, the 'latest' tag.
+       * Pushing multiple tags is cheap, as all the layers are reused. */
+    docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
+      dockerImage.push()
+    }
+  }
+}
+
+
+
+// app.push("${env.BUILD_NUMBER}")
+// app.push("latest")
 
 //  stage('Push docker image') {
 //    docker.withRegistry('https://docker.neoprime.it', 'andreas@docker.neoprime.it') {
@@ -58,9 +90,8 @@ node {
 //    }
 //  }
 
-  // stage('Front-end') {
-  //   docker.image('node:7-alpine').inside {
+// stage('Front-end') {
+//   docker.image('node:7-alpine').inside {
 //            sh 'node --version'
-  //      }
-  //}
-}
+//      }
+//}
