@@ -10,7 +10,12 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "robots.txt"
+        "robots.txt",
+        {
+          "glob": "*",
+          "input": "docker/",
+          "output": "./"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
