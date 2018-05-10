@@ -18,7 +18,7 @@
     "docs": "hads ./docs -o",
     "env": "ngx-scripts env npm_package_version",
     "generate": "ng generate",
-    "docker:build": "npm run build && bash -c ./get_docker_image_name.sh | xargs -0 -I % docker build -t % dist/",
+    "docker:build": "bash -c ./get_docker_image_name.sh | xargs -0 -I % docker build -t % dist/",
     "docker:push": "bash -c ./get_docker_image_name.sh | xargs -0 -I % docker push %"
   },
   "dependencies": {

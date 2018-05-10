@@ -4,7 +4,7 @@
 
 # Grab the git branch name
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD \
-  | sed $'s/\r//')
+  | sed 's/\r//g')
 
 # Version key/value should be on its own line, cleaning the string
 PACKAGE_VERSION=$(cat package.json \
@@ -12,7 +12,7 @@ PACKAGE_VERSION=$(cat package.json \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[ ",]//g' \
-  | sed $'s/\r//')
+  | sed 's/\r//g')
 
 # Get the module name from the package.json, and clean the string
 PROJECT_NAME=$(cat package.json \
@@ -20,7 +20,7 @@ PROJECT_NAME=$(cat package.json \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[ ",]//g' \
-  | sed $'s/\r//')
+  | sed 's/\r//g')
 
 # Get the registry url from the package.json if specified, and clean the string
 REGISTRY_URL=$(cat package.json \
@@ -28,7 +28,7 @@ REGISTRY_URL=$(cat package.json \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[ \/",]//g' \
-  | sed $'s/\r//')
+  | sed 's/\r//g')
 
 # Get the docker namespace from the package.json, and clean the string
 # TODO: Fail is not specified?
@@ -37,7 +37,7 @@ REGISTRY_NAMESPACE=$(cat package.json \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[ \/",]//g' \
-  | sed $'s/\r//')
+  | sed 's/\r//g')
 
 # Optinally, an environment can be passed to the script, that will be appended to the image name
 if [ -n "$1" ]; then
