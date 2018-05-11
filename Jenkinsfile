@@ -43,17 +43,17 @@ node {
     dockerImage = docker.build(imageName, "dist/")
   }
 
-  stage('Push Docker Image') {
-    /* Push the container to the custom Registry */
-
-    /* Finally, we'll push the image with two tags:
-       * First, the incremental build number from Jenkins
-       * Second, the 'latest' tag.
-       * Pushing multiple tags is cheap, as all the layers are reused. */
-    docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
-      dockerImage.push()
-    }
-  }
+//  stage('Push Docker Image') {
+//    /* Push the container to the custom Registry */
+//
+//    /* Finally, we'll push the image with two tags:
+//       * First, the incremental build number from Jenkins
+//       * Second, the 'latest' tag.
+//       * Pushing multiple tags is cheap, as all the layers are reused. */
+//    docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
+//      dockerImage.push()
+//    }
+//  }
 
   stage('Deploy') {
     // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
