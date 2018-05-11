@@ -7,8 +7,8 @@ describe('app', () => {
     page = new AppPage();
   });
 
-  it('should display hello message', () => {
+  it('should display ANDREAS LORENZEN', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Hello world !');
+    expect(page.getParagraphText()).toEqual('ANDREAS LORENZEN');
   });
 });
