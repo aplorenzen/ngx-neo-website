@@ -12,7 +12,12 @@
         "favicon.ico",
         "robots.txt",
         {
-          "glob": "*",
+          "glob": "Dockerfile",
+          "input": "docker/",
+          "output": "./"
+        },
+        {
+          "glob": ".dockerignore",
           "input": "docker/",
           "output": "./"
         }

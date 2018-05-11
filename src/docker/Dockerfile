@@ -46,3 +46,6 @@ RUN chown -R root:daemon \
 # Ensure that the files can only be read, even by the httpd server.
 RUN chmod -R 440 \
   /usr/local/apache2/htdocs/*
+
+# TODO: Explain why this is needed!
+RUN chmod +x /usr/local/apache2/htdocs/assets
