@@ -57,8 +57,8 @@ node {
 
   stage('Deploy') {
     // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
-    sh "export IMAGE_NAME=" + imageName
-    sh "docker-compose --file src/docker/docker-compose.yml up --detach"
+    sh 'export IMAGE_NAME=' + imageName
+    sh 'docker-compose -f src/docker/docker-compose.yml up -d'
   }
 }
 
