@@ -1,103 +1,16 @@
 @import "../../../theme/theme-variables";
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
-.skill-image-span {
-  margin-left: 0px;
-  margin-right: auto;
-  position: relative;
-  top: -2px;
-  left: -4px;
-}
-
-.skill-title-span {
-  font-weight: 500;
-  margin-left: 2px;
-}
-
-.rank-text {
-  font-weight: 600;
-  font-size: 1.45rem;
-}
-
-.card-header {
-  // display: flex;
-  height: 48px
-}
-
 .skill-image {
   width: 96px;
   height: 96px;
 }
 
 .skill-since {
-  // color: rgba(240, 95, 64, .5);
-  color: #f05f40;
+  color: $theme-primary;
 }
 
-.rank-container {
-  // height: 50px;
-  display: flex;
-  // justify-content: flex-end;
-  // align-items: center;
-
-  padding: 0px;
-  margin-bottom: 10px;
-}
-
-.card {
-  min-width: 290px;
-  // max-width: 400px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-/*.card-deck {
-  justify-content: center;
-
-  .card {
-    min-width: 500px;
-    margin-bottom: 15px;
-    margin-top: 15px;
-
-    @include media-breakpoint-up(sm) {
-      // 2-up
-      flex: 0 0 calc(100%/2 - 30px); // Subtract left+right margin
-    }
-
-    @include media-breakpoint-up(md) {
-      // 3-up
-      flex: 0 0 calc(100%/3 - 30px);
-    }
-
-    @include media-breakpoint-up(lg) {
-      // 4-up
-      flex: 0 0 calc(100%/4 - 30px);
-    }
-
-    @include media-breakpoint-up(xl) {
-      // 5-up
-      flex: 0 0 calc(100%/5 - 30px);
-    }
-  }
-}*/
-
-.skills-card-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.skills-card-row > div[class*="col-"] {
-  display: flex;
-}
-
-.skill-card {
-  max-width: 400px;
-  min-width: 290px;
-
-  .card {
-    // box-shadow: 0 0 10px #343a40;
-  }
-}
+// TODO: Tune this a bit, that's a lot of break points!
 
 @media (min-width: 1400px) {
   .container {
@@ -139,12 +52,4 @@
   .container {
     max-width: 2280px;
   }
-}
-
-.rating-bar {
-  height: 32px;
-  position: relative;
-  top: -16px;
-  margin-left: auto;
-  margin-right: 0px;
 }

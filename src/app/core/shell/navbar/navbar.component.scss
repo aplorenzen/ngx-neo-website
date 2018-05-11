@@ -14,14 +14,13 @@
   font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
-.navbar-close-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
+.neo-navbar-menu {
+  display: block;
+  top: 0;
+}
+
+.dropdown-menu {
+  margin-bottom: 6px;
 }
 
 .neo-navbar .navbar-brand {
@@ -48,11 +47,13 @@
 .neo-navbar-nav > .nav-item > .nav-link:hover {
   color: $theme-primary;
 }
+
 .neo-navbar-nav > .nav-item > .nav-link.active,
 .neo-navbar-nav > .nav-item > .nav-link:focus.active {
   color: $theme-primary;
   background-color: transparent;
 }
+
 .neo-navbar-nav > .nav-item > .nav-link.active:hover,
 .neo-navbar-nav > .nav-item > .nav-link:focus.active:hover {
   background-color: transparent;
@@ -110,12 +111,4 @@
   .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:hover {
     color: $theme-primary;
   }
-}
-.neo-navbar-menu {
-  display: block;
-  top: 0px;
-}
-
-.dropdown-menu {
-  margin-bottom: 6px;
 }
