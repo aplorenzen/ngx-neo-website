@@ -4,12 +4,10 @@ import env from './.env';
 export const environment = {
   production: true,
   version: env.npm_package_version,
-  // version: require('../../package.json').version,
   serverUrl: 'https://api.chucknorris.io',
-  defaultLanguage: 'en-US',
+  defaultLanguage: 'English',
   supportedLanguages: [
-    'en-US',
-    'fr-FR',
-    'da-DK'
+    'English',
+    'Dansk'
   ]
 };
