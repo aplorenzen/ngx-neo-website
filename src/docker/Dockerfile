@@ -19,6 +19,8 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
     DirectoryIndex index.html\n\
     RewriteEngine on\n\
     RewriteCond %{REQUEST_FILENAME} -s [OR]\n\
+    RewriteCond %{REQUEST_FILENAME} -f [OR]\n\
+    RewriteCond %{REQUEST_FILENAME} -l [OR]\n\
     RewriteCond %{REQUEST_FILENAME} -d\n\
     RewriteRule ^.*$ - [NC,L]\n\
     RewriteRule ^(.*) index.html [NC,L]\n' \
