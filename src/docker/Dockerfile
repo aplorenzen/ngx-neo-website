@@ -18,12 +18,10 @@ RUN sed -i \
 RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was written from the Dockerfile when building the image ###\n\
     DirectoryIndex index.html\n\
     RewriteEngine on\n\
-    RewriteCond %{REQUEST_FILENAME} -s [OR]\n\
-    RewriteCond %{REQUEST_FILENAME} -f [OR]\n\
-    RewriteCond %{REQUEST_FILENAME} -l [OR]\n\
-    RewriteCond %{REQUEST_FILENAME} -d\n\
-    RewriteRule ^.*$ - [NC,L]\n\
-    RewriteRule ^(.*) index.html [NC,L]\n' \
+        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
+        RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
+        RewriteRule ^ - [L]\n\
+    RewriteRule ^ /index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
