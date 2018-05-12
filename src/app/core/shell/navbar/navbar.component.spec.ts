@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { I18nService } from '../../i18n.service';
 import { NavbarComponent } from './navbar.component';
+import {ScrollToModule, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -17,13 +18,15 @@ describe('NavbarComponent', () => {
         RouterTestingModule,
         NgbModule.forRoot(),
         TranslateModule.forRoot(),
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ScrollToModule
       ],
       declarations: [
         NavbarComponent
       ],
       providers: [
-        I18nService
+        I18nService,
+        ScrollToService
       ]
     })
     .compileComponents();

@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CoreModule } from '@app/core';
 import { ShellComponent } from './shell.component';
+import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -19,7 +20,11 @@ describe('ShellComponent', () => {
         TranslateModule.forRoot(),
         NgbModule.forRoot(),
         CoreModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ScrollToModule
+      ],
+      providers: [
+        ScrollToService
       ]
     })
     .compileComponents();
