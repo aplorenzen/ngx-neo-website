@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   imports: [
@@ -28,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     AboutModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ScrollToModule.forRoot()
   ],
   declarations: [
     AppComponent
