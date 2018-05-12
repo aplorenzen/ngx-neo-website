@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-sm navbar-light fixed-top neo-navbar"
-     appScrollClass="navbar-shrink"
+     appScrollClass
+     cssClass="navbar-shrink"
      appScrollOffset="100">
-  <a class="navbar-brand" pageScroll pageScrollTarget="#pagetop" [pageScrollDuration]="300" [routerLink]="['/home']"
+  <a class="navbar-brand" [routerLink]="['/home']"
      translate>application.name</a>
   <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
           aria-label="Toggle navigation" (click)="toggleMenu()">
@@ -10,17 +11,17 @@
   <div id="navbar-menu" class="collapse navbar-collapse neo-navbar-menu" [@slideInOut]="menuState">
     <div class="navbar-nav neo-navbar-nav">
       <div class="nav-item">
-        <a class="nav-link text-uppercase" pageScroll (click)="hideMenu()" pageScrollTarget="#profile" [pageScrollDuration]="300">
+        <a class="nav-link text-uppercase" (click)="hideMenu()">
           <span translate>Profile</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" pageScroll (click)="hideMenu()" pageScrollTarget="#skills" [pageScrollDuration]="300">
+        <a class="nav-link text-uppercase" (click)="hideMenu()">
           <span translate>Key Skills</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" pageScroll (click)="hideMenu()" pageScrollTarget="#contact" [pageScrollDuration]="300">
+        <a class="nav-link text-uppercase" (click)="hideMenu()">
           <span translate>Contact</span>
         </a>
       </div>
