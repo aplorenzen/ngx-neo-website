@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { BarRatingModule } from 'ngx-bar-rating';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgsRevealModule } from 'ng-scrollreveal';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -15,7 +14,6 @@ import { BannerComponent } from './banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
-import { NgsRevealModule } from 'ng-scrollreveal';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
@@ -26,8 +24,6 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     CoreModule,
     SharedModule,
     HomeRoutingModule,
-    NgxPageScrollModule,
-    BarRatingModule,
     NgsRevealModule,
     ScrollToModule
   ],

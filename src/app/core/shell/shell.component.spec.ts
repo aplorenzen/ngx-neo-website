@@ -1,6 +1,7 @@
 ///<reference path="../../../../node_modules/@angular/core/testing/src/test_bed.d.ts"/>
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -17,7 +18,8 @@ describe('ShellComponent', () => {
         RouterTestingModule,
         TranslateModule.forRoot(),
         NgbModule.forRoot(),
-        CoreModule
+        CoreModule,
+        BrowserAnimationsModule
       ]
     })
     .compileComponents();

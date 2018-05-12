@@ -16,7 +16,7 @@ import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
 import { ScrollClassDirective } from '@app/shared/scroll-class.directive';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
-import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   imports: [
@@ -24,8 +24,7 @@ import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
     HttpClientModule,
     TranslateModule,
     NgbModule,
-    RouterModule,
-    NgxPageScrollModule,
+    RouterModule
     ScrollToModule
   ],
   declarations: [
