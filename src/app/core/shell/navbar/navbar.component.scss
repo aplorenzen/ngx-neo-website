@@ -25,7 +25,6 @@
 
 .neo-navbar .navbar-brand {
   font-weight: 700;
-  // text-transform: uppercase;
   color: $theme-primary;
   font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
@@ -35,27 +34,27 @@
   color: $theme-primary;
 }
 
-.neo-navbar-nav > .nav-item > .nav-link,
-.neo-navbar-nav > .nav-item > .nav-link:focus {
+.nav-item > .nav-link,
+.nav-item > .nav-link:focus {
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: $theme-dark;
 }
 
-.neo-navbar-nav > .nav-item > .nav-link:focus:hover,
-.neo-navbar-nav > .nav-item > .nav-link:hover {
+.nav-item > .nav-link:hover,
+.nav-item > .nav-link:focus:hover {
   color: $theme-primary;
 }
 
-.neo-navbar-nav > .nav-item > .nav-link.active,
-.neo-navbar-nav > .nav-item > .nav-link:focus.active {
+.nav-item > .nav-link.active,
+.nav-item > .nav-link:focus.active {
   color: $theme-primary;
   background-color: transparent;
 }
 
-.neo-navbar-nav > .nav-item > .nav-link.active:hover,
-.neo-navbar-nav > .nav-item > .nav-link:focus.active:hover {
+.nav-item > .nav-link.active:hover,
+.nav-item > .nav-link:focus.active:hover {
   background-color: transparent;
 }
 
@@ -69,8 +68,17 @@
     color: rgba(255, 255, 255, 0.7);
   }
 
-  .neo-navbar .navbar-brand:focus,
-  .neo-navbar .navbar-brand:hover {
+  .navbar-brand:focus,
+  .navbar-brand:hover {
+    color: $theme-secondary;
+  }
+
+  .nav-item > .nav-link,
+  .nav-item > .nav-link:focus {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .nav-item > .nav-link:hover {
     color: $theme-secondary;
   }
 
@@ -78,13 +86,7 @@
     padding: 0.5rem 1rem;
   }
 
-  .neo-navbar-nav > .nav-item > .nav-link,
-  .neo-navbar-nav > .nav-item > .nav-link:focus {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .neo-navbar-nav > .nav-item > .nav-link:focus:hover,
-  .neo-navbar-nav > .nav-item > .nav-link:hover {
+  .nav-item > .nav-link:focus:hover {
     color: $theme-secondary;
   }
 
@@ -107,8 +109,8 @@
     color: $theme-dark;
   }
 
-  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:focus:hover,
-  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:hover {
+  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:hover,
+  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:focus:hover {
     color: $theme-primary;
   }
 }
