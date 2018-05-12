@@ -7,10 +7,9 @@ export const environment = {
   production: false,
   version: '(dev)',
   serverUrl: '/api',
-  defaultLanguage: 'en-US',
+  defaultLanguage: 'English',
   supportedLanguages: [
-    'en-US',
-    'fr-FR',
-    'da-DK'
+    'English',
+    'Dansk'
   ]
 };

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileComponent } from './profile.component';
+import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -8,7 +9,13 @@ describe('ProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      imports: [
+        ScrollToModule
+      ],
+      declarations: [ ProfileComponent ],
+      providers: [
+        ScrollToService
+      ]
     })
     .compileComponents();
   }));

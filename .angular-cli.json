@@ -13,22 +13,12 @@
         "robots.txt",
         {
           "glob": "Dockerfile",
-          "input": "docker/httpd/",
+          "input": "docker/",
           "output": "./"
-        },
-        {
-          "glob": ".htaccess",
-          "input": "docker/httpd/",
-          "output": "./"
-        },
-        {
-          "glob": "httpd.conf",
-          "input": "docker/httpd/conf/",
-          "output": "./conf/"
         },
         {
           "glob": ".dockerignore",
-          "input": "docker/httpd/",
+          "input": "docker/",
           "output": "./"
         }
       ],
@@ -40,9 +30,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "main.scss"
+        "main.scss",
+        "../node_modules/pace-progress/themes/black/pace-theme-flash.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/pace-progress/pace.js",
+        "../node_modules/scrollreveal/dist/scrollreveal.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

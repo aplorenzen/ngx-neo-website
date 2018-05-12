@@ -15,7 +15,8 @@ $fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
 // Color system
 //
 
-$white:  #fff;
+$white:    #fff;
+$black:    #000;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -25,7 +26,6 @@ $gray-600: #868e96;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
-$black:  #000;
 
 $blue:    #0073dd;
 $indigo:  #6610f2;
@@ -38,15 +38,20 @@ $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 
+$theme-primary:   #f05f40;
+$theme-secondary: $white;
+$theme-dark:      #212529;
+$theme-gray:      #343a40;
+
 $theme-colors: (
-  primary: #f05f40,
-  secondary: $gray-600,
+  primary: $theme-primary,
+  secondary: $theme-secondary,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
   light: $gray-100,
-  dark: $gray-800
+  dark: $theme-gray
 );
 
 // Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used

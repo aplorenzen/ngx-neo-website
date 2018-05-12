@@ -1,11 +1,13 @@
 ///<reference path="../../../../node_modules/@angular/core/testing/src/test_bed.d.ts"/>
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CoreModule } from '@app/core';
 import { ShellComponent } from './shell.component';
+import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -17,7 +19,12 @@ describe('ShellComponent', () => {
         RouterTestingModule,
         TranslateModule.forRoot(),
         NgbModule.forRoot(),
-        CoreModule
+        CoreModule,
+        BrowserAnimationsModule,
+        ScrollToModule
+      ],
+      providers: [
+        ScrollToService
       ]
     })
     .compileComponents();
