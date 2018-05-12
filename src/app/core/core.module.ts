@@ -15,6 +15,7 @@ import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
 import { ScrollClassDirective } from '@app/shared/scroll-class.directive';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { ScrollClassDirective } from '@app/shared/scroll-class.directive';
     HttpClientModule,
     TranslateModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ScrollToModule
   ],
   declarations: [
     NavbarComponent,

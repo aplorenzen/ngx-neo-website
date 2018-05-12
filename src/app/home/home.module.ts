@@ -14,6 +14,7 @@ import { BannerComponent } from './banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { SkillsComponent } from './skills/skills.component';
     CoreModule,
     SharedModule,
     HomeRoutingModule,
-    NgsRevealModule
+    NgsRevealModule,
+    ScrollToModule
   ],
   declarations: [
     HomeComponent,

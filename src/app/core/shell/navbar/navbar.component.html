@@ -2,7 +2,7 @@
      appScrollClass
      cssClass="navbar-shrink"
      appScrollOffset="100">
-  <a class="navbar-brand" [routerLink]="['/home']"
+  <a class="navbar-brand" [ngx-scroll-to]="'#pagetop'" (click)="hideMenu()" [routerLink]="['/home']"
      translate>application.name</a>
   <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
           aria-label="Toggle navigation" (click)="toggleMenu()">
@@ -11,17 +11,17 @@
   <div id="navbar-menu" class="collapse navbar-collapse neo-navbar-menu" [@slideInOut]="menuState">
     <div class="navbar-nav neo-navbar-nav">
       <div class="nav-item">
-        <a class="nav-link text-uppercase" (click)="hideMenu()">
+        <a class="nav-link text-uppercase" (click)="hideMenu()" [ngx-scroll-to]="'#profile'">
           <span translate>Profile</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" (click)="hideMenu()">
+        <a class="nav-link text-uppercase" (click)="hideMenu()" [ngx-scroll-to]="'#skills'">
           <span translate>Key Skills</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" (click)="hideMenu()">
+        <a class="nav-link text-uppercase" (click)="hideMenu()" [ngx-scroll-to]="'#contact'">
           <span translate>Contact</span>
         </a>
       </div>
