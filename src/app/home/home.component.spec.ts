@@ -9,6 +9,7 @@ import { BannerComponent } from '@app/home/banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SkillsComponent } from '@app/home/skills/skills.component';
 import { FooterComponent } from '@app/home/footer/footer.component';
+import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -19,7 +20,8 @@ describe('HomeComponent', () => {
         imports: [
           CoreModule,
           SharedModule,
-          HttpClientTestingModule
+          HttpClientTestingModule,
+          ScrollToModule
         ],
         declarations: [
           HomeComponent,
@@ -28,7 +30,9 @@ describe('HomeComponent', () => {
           SkillsComponent,
           FooterComponent
         ],
-        providers: [QuoteService]
+        providers: [
+          QuoteService,
+          ScrollToService]
       })
       .compileComponents();
   }));
