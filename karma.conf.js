@@ -8,7 +8,13 @@ module.exports = function(config) {
     customLaunchers: {
       ChromeNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        // We must disable the Chrome sandbox when running Chrome inside Docker (Chrome's sandbox needs
+        // more permissions than Docker allows by default)
+        // Also: https://github.com/GoogleChrome/puppeteer/issues/560
+        flags: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox'
+        ]
       }
     },
     basePath: '',
