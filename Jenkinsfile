@@ -15,7 +15,7 @@ node {
   /* This step runs the unit tests for the angular project */
   stage('Test Application') {
     docker.image('node:9-alpine').inside {
-      sh 'export CHROME_BIN=/usr/bin/google-chrome && npm run test:ci'
+      sh 'export NO_PROXY="localhost, 0.0.0.0/4201, 0.0.0.0/9876" && export CHROME_BIN=/usr/bin/google-chrome && npm run test:ci'
       sh 'npm run e2e'
     }
 
