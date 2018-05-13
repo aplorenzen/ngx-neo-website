@@ -13,14 +13,14 @@ node {
   }
 
   /* This step runs the unit tests for the angular project */
-//  stage('Test Application') {
-//    docker.image('node:9-alpine').inside {
-//      sh 'npm run test:ci'
-//      sh 'npm run e2e'
-//    }
-//
-//    junit 'reports/junit/*.xml'
-//  }
+  stage('Test Application') {
+    docker.image('node:9-alpine').inside {
+      sh 'npm run test:ci'
+      sh 'npm run e2e'
+    }
+
+    junit 'reports/junit/*.xml'
+  }
 
   /* This step builds the angular application, leaves it in the default dist/ directory */
   stage('Build Application') {
