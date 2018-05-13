@@ -9,7 +9,10 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': process.env.PROTRACTOR_BROWSER || 'chrome'
+    'browserName': process.env.PROTRACTOR_BROWSER || 'chrome',
+    chromeOptions: {
+      args: ['--no-sandbox']
+    }
   },
   // Only works with Chrome and Firefox
   directConnect: true,
