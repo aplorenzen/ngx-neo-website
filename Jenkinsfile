@@ -5,19 +5,21 @@ node {
 
   checkout scm
 
-  /* Before we can start, we need to secure that the dependencies of the project are in installed */
+  def buildDockerfile = 'src/docker/chrome-test.Dockerfile'
+  def buildImage
+
+/* Before we can start, we need to secure that the dependencies of the project are in installed */
   stage('Install Dependencies') {
-    docker.image('node:9-alpine').inside {
+    buildImage = docker.build("node-builder:9", "-f ${testDockerfile} ./src/docker")
+
+    buildImage.inside {
       sh 'npm install'
     }
   }
 
   /* This step runs the unit tests for the angular project */
   stage('Test Application') {
-    def testDockerfile = 'src/docker/chrome-test.Dockerfile'
-    def testImage = docker.build("node-test:9", "-f ${testDockerfile} ./src/docker")
-
-    testImage.inside {
+    buildImage.inside {
       sh 'npm run test:ci'
       sh 'npm run e2e'
     }
@@ -27,7 +29,7 @@ node {
 
   /* This step builds the angular application, leaves it in the default dist/ directory */
   stage('Build Application') {
-    docker.image('node:9-alpine').inside {
+    buildImage.inside {
       sh 'npm run build'
     }
   }
