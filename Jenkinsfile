@@ -17,6 +17,7 @@ node {
   stage('Install Dependencies') {
 
     buildImage.inside {
+      sh 'npm rebuild node-sass --force'
       sh 'npm install'
     }
   }
