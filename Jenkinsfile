@@ -8,9 +8,13 @@ node {
   def buildDockerfile = 'src/docker/chrome-test.Dockerfile'
   def buildImage
 
-/* Before we can start, we need to secure that the dependencies of the project are in installed */
+  /* Building customer container for building and testing the project */
+  stage('Prepare Build Container') {
+    buildImage = docker.build("node-builder:9", "-f ${buildDockerfile} ./src/docker")
+  }
+
+  /* Before we can start, we need to secure that the dependencies of the project are in installed */
   stage('Install Dependencies') {
-    buildImage = docker.build("node-builder:9", "-f ${testDockerfile} ./src/docker")
 
     buildImage.inside {
       sh 'npm install'
