@@ -26,6 +26,9 @@ node {
   stage('Test Application') {
     buildImage.inside {
       sh 'npm run test:ci'
+      sh 'which google-chrome'
+      sh 'echo ${PATH}'
+      sh 'env'
       sh 'npm run e2e'
     }
 
