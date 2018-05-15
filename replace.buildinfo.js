@@ -9,47 +9,34 @@ Git repository - GIT_REPO_URL
 Version - ...
 Docker image name - ...
 Docker image link - ...
+npm version
+Jenkins version
+Node version
+ng version
+ngx version
 */
 
-const optionsBuildUrl = {
-  /* Repalce in all environment files */
-  files: ['src/environments/environment*.ts'],
-  from: /buildUrl: '(.*)'/g,
-  to: "buildUrl: '"+ process.env.RUN_DISPLAY_URL + "'",
-  allowEmptyPaths: false,
-};
+replaceEnvironmentValue('src/environments/environment*.ts');
 
-const optionsBuildNumber = {
-  /* Repalce in all environment files */
-  files: ['src/environments/environment*.ts'],
-  from: /buildId: '(.*)'/g,
-  to: "buildId: '"+ process.env.BUILD_ID + "'",
-  allowEmptyPaths: false,
-};
+function replaceEnvironmentValue(files) {
 
-const optionsGitUrl = {
-  /* Repalce in all environment files */
-  files: ['src/environments/environment*.ts'],
-  from: /gitUrl: '(.*)'/g,
-  to: "gitUrl: '"+ process.env.GIT_REPO_URL + "'",
-  allowEmptyPaths: false,
-};
+  try {
+    const replaceOptions = {
+      files: files,
+      from: [/buildUrl: '(.*)'/g, /buildId: '(.*)'/g, /gitUrl: '(.*)'/g] ,
+      to: ["buildUrl: '"+ process.env.RUN_DISPLAY_URL + "'", "buildId: '"+ process.env.BUILD_ID + "'", "gitUrl: '"+ process.env.GIT_REPO_URL + "'"],
+      allowEmptyPaths: false,
+    };
 
-try {
-  changedFiles = replace.sync(optionsBuildUrl);
-  console.log(changedFiles);
-  changedFiles = replace.sync(optionsBuildNumber);
-  console.log(changedFiles);
-  changedFiles = replace.sync(optionsGitUrl);
-  console.log(changedFiles);
+    console.debug(replaceOptions);
 
-  /* if (changedFiles == 0) {
-    throw "Please make sure that file '" + options.files + "' has \"version: ''\"";
-  }*/
-  /* console.log('Build version set: ' + buildVersion); */
-}
-catch (error) {
-  console.error('Error occurred:', error);
-  throw error
+    changedFiles = replace.sync(replaceOptions);
+
+    console.log('Changed in the files: ' + changedFiles);
+  }
+  catch (error) {
+    console.error('An error occurred when replacing environment value: "' + key + '" to: "' + value + '" in the files: ' + files, error);
+    throw error
+  }
 }
 

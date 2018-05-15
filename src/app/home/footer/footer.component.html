@@ -24,7 +24,7 @@
           </a>
         </div>
 
-        <a *ngIf="" href="{{buildUrl}}" class="btn btn-info" role="button">Build ({{buildId}})</a>
+        <a *ngIf="buildUrl && buildId" href="{{buildUrl}}" class="btn btn-info" role="button">Build ({{buildId}})</a>
         <a href="{{gitUrl}}" class="btn btn-info" role="button">Hey! This site is open source!</a>
       </div>
     </div>
