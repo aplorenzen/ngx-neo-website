@@ -1,7 +1,13 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
+/* Sources for headless chrome config:
+  https://github.com/angular/protractor/issues/4695
+  https://github.com/GoogleChrome/puppeteer/issues/679
+ */
+
 const { SpecReporter } = require('jasmine-spec-reporter');
+const puppeteer = require('puppeteer');
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -11,7 +17,8 @@ exports.config = {
   capabilities: {
     'browserName': process.env.PROTRACTOR_BROWSER || 'chrome',
     chromeOptions: {
-      args: ['--no-sandbox']
+      args: ['--headless', '--no-sandbox', '--disable-gpu'],
+      binary: puppeteer.executablePath()
     }
   },
   // Only works with Chrome and Firefox

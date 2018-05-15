@@ -17,7 +17,8 @@ node {
   stage('Install Dependencies') {
 
     buildImage.inside {
-      sh 'npm rebuild node-sass --force'
+      /* The 'npm rebuild node-sass --force' script should be executed if the last 'npm install' was run on a different platform, eg. alpine, and now debian */
+      // sh 'npm rebuild node-sass --force'
       sh 'npm install'
     }
   }
@@ -26,9 +27,6 @@ node {
   stage('Test Application') {
     buildImage.inside {
       sh 'npm run test:ci'
-      sh 'which google-chrome'
-      sh 'echo ${PATH}'
-      sh 'env'
       sh 'npm run e2e'
     }
 
