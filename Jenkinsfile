@@ -26,9 +26,20 @@ node {
 
   /* This step replaces constants in the environments.ts files for the Angular project, making them available in the
      build output if used in the source code */
+
+  /*withEnv(['DISABLE_AUTH=true',
+           'DB_ENGINE=sqlite']) {
+    stage('Build') {
+      sh 'printenv'
+    }
+  }*/
+
   stage('Update Build Information') {
 
     buildImage.inside {
+      sh 'echo ${GIT_URL}'
+      sh 'export A_GIT_URL=' + env.GIT_URL
+      sh 'echo ${A_GIT_URL}'
       sh 'npm run jenkins:buildinfo'
     }
   }

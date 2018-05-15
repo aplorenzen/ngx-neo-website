@@ -14,6 +14,10 @@ Jenkins version
 Node version
 ng version
 ngx version
+
+
+BUILD_DISPLAY_NAME: '#60',
+
 */
 
 console.log("process.env.RUN_DISPLAY_URL: " + process.env.RUN_DISPLAY_URL);
