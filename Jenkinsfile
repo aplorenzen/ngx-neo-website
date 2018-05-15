@@ -54,6 +54,8 @@ node {
   /* This step builds the angular application, leaves it in the default dist/ directory */
   stage('Build Application') {
     buildImage.inside {
+      sh 'echo $RUN_DISPLAY_URL'
+
       sh 'npm run build'
     }
   }
