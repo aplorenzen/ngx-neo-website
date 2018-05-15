@@ -9,5 +9,9 @@ export const environment = {
   supportedLanguages: [
     'English',
     'Dansk'
-  ]
+  ],
+  /* Autopopulated fields from the replace.buildinfo.js script */
+  buildUrl: 'unset',
+  buildId: 'unset',
+  gitUrl: 'unset'
 };
