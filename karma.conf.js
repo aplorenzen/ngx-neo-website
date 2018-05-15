@@ -5,6 +5,18 @@ process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function(config) {
   config.set({
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        /* We must disable the Chrome sandbox when running Chrome inside Docker (Chrome's sandbox needs
+           more permissions than Docker allows by default)
+           Also: https://github.com/GoogleChrome/puppeteer/issues/560
+           My solution from: https://github.com/travis-ci/travis-ci/issues/8836 */
+        flags: [
+          '--no-sandbox'
+        ]
+      }
+    },
     basePath: '',
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
@@ -38,7 +50,7 @@ module.exports = function(config) {
     // Level of logging, can be: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
+    browsers: ['ChromeHeadlessNoSandbox'],
     singleRun: false
   });
 };
