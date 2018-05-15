@@ -36,10 +36,12 @@ node {
 
   stage('Update Build Information') {
 
+    sh 'echo ${GIT_URL}'
+    sh 'export A_GIT_URL=' + env.GIT_URL
+    sh 'echo ${A_GIT_URL}'
+    sh 'export GIT_URL=' + env.GIT_URL
+
     buildImage.inside {
-      sh 'echo ${GIT_URL}'
-      sh 'export A_GIT_URL=' + env.GIT_URL
-      sh 'echo ${A_GIT_URL}'
       sh 'npm run jenkins:buildinfo'
     }
   }
