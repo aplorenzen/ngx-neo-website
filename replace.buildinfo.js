@@ -18,7 +18,7 @@ ngx version
 
 console.log("process.env.RUN_DISPLAY_URL: " + process.env.RUN_DISPLAY_URL);
 console.log("process.env.BUILD_ID: " + process.env.BUILD_ID);
-console.log("process.env.GIT_REPO_URL;: " + process.env.GIT_REPO_URL);
+console.log("process.env.GIT_REPO_URL;: " + process.env.GIT_URL);
 
 replaceEnvironmentValue('src/environments/environment*.ts');
 
@@ -27,8 +27,16 @@ function replaceEnvironmentValue(files) {
   try {
     const replaceOptions = {
       files: files,
-      from: [/buildUrl: '(.*)'/g, /buildId: '(.*)'/g, /gitUrl: '(.*)'/g] ,
-      to: ["buildUrl: '"+ process.env.RUN_DISPLAY_URL + "'", "buildId: '"+ process.env.BUILD_ID + "'", "gitUrl: '"+ process.env.GIT_REPO_URL + "'"],
+      from: [
+        /buildUrl: '(.*)'/g,
+        /buildId: '(.*)'/g,
+        /gitUrl: '(.*)'/g
+      ],
+      to: [
+        "buildUrl: '"+ process.env.RUN_DISPLAY_URL + "'",
+        "buildId: '"+ process.env.BUILD_ID + "'",
+        "gitUrl: '"+ process.env.GIT_URL + "'"
+      ],
       allowEmptyPaths: false,
     };
 
