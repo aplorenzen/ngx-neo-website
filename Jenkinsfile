@@ -25,12 +25,22 @@ node {
 
   /* This step runs the unit tests for the angular project */
   stage('Test Application') {
-    buildImage.inside {
-      sh 'npm run test:ci'
-      sh 'npm run e2e'
-    }
-
-    junit 'reports/junit/*.xml'
+    parallel 'Unit Tests (CI)': {
+      buildImage.inside {
+        sh 'npm run test:ci'
+      }
+    },
+    'End to End Tests': {
+      buildImage.inside {
+        sh 'npm run e2e'
+      }
+    },
+      'Unit Tests': {
+        buildImage.inside {
+          sh 'npm run test'
+          junit 'reports/junit/*.xml'
+        }
+      }
   }
 
   /* This step builds the angular application, leaves it in the default dist/ directory */
