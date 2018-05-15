@@ -5,26 +5,37 @@ node {
 
   checkout scm
 
+  def buildDockerfile = 'src/docker/chrome-test.Dockerfile'
+  def buildImage
+
+  /* Building customer container for building and testing the project */
+  stage('Prepare Build Container') {
+    buildImage = docker.build("node-builder:9", "-f ${buildDockerfile} ./src/docker")
+  }
+
   /* Before we can start, we need to secure that the dependencies of the project are in installed */
   stage('Install Dependencies') {
-    docker.image('node:9-alpine').inside {
+
+    buildImage.inside {
+      /* The 'npm rebuild node-sass --force' script should be executed if the last 'npm install' was run on a different platform, eg. alpine, and now debian */
+      // sh 'npm rebuild node-sass --force'
       sh 'npm install'
     }
   }
 
   /* This step runs the unit tests for the angular project */
-//  stage('Test Application') {
-//    docker.image('node:9-alpine').inside {
-//      sh 'npm run test:ci'
-//      sh 'npm run e2e'
-//    }
-//
-//    junit 'reports/junit/*.xml'
-//  }
+  stage('Test Application') {
+    buildImage.inside {
+      sh 'npm run test:ci'
+      sh 'npm run e2e'
+    }
+
+    junit 'reports/junit/*.xml'
+  }
 
   /* This step builds the angular application, leaves it in the default dist/ directory */
   stage('Build Application') {
-    docker.image('node:9-alpine').inside {
+    buildImage.inside {
       sh 'npm run build'
     }
   }
