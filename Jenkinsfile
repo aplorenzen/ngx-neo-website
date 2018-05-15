@@ -24,6 +24,15 @@ node {
     }
   }
 
+  /* This step replaces constants in the environments.ts files for the Angular project, making them available in the
+     build output if used in the source code */
+  stage('Update Build Information') {
+
+    buildImage.inside {
+      sh 'npm run jenkins:buildinfo'
+    }
+  }
+
   /* This step runs the unit tests for the angular project */
   stage('Test Application') {
     parallel 'End to End Tests': {
