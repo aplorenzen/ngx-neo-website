@@ -18,6 +18,7 @@ node {
 
     buildImage.inside {
       /* The 'npm rebuild node-sass --force' script should be executed if the last 'npm install' was run on a different platform, eg. alpine, and now debian */
+      /* TODO: Figure out if this can be detected or perhaps handled in a try catch */
       // sh 'npm rebuild node-sass --force'
       sh 'npm install'
     }
@@ -29,14 +30,24 @@ node {
       buildImage.inside {
         sh 'npm run e2e'
       }
-      /* TODO: Get test output from the e2e tests */
     },
     'Unit Tests (CI)': {
       buildImage.inside {
         sh 'npm run test:ci'
       }
-      /* TODO: Confirm that we are getting the test restults out */
+
+      /* Archive the test results */
       junit 'reports/junit/*.xml'
+
+      /* Archive the test coverage results */
+      publishHTML(
+        [allowMissing: true,
+         alwaysLinkToLastBuild: false,
+         keepAll: true,
+         reportDir: 'reports/coverage',
+         reportFiles: 'index.html',
+         reportName: 'Test Coverage Report',
+         reportTitles: ''])
     }
   }
 
