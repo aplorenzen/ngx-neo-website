@@ -5,25 +5,44 @@ node {
 
   checkout scm
 
+  def buildDockerfile = 'src/docker/chrome-test.Dockerfile'
+  def buildImage
+
+  /* Building customer container for building and testing the project */
+  stage('Prepare Build Container') {
+    buildImage = docker.build("node-builder:9", "-f ${buildDockerfile} ./src/docker")
+  }
+
   /* Before we can start, we need to secure that the dependencies of the project are in installed */
   stage('Install Dependencies') {
-    docker.image('node:9-alpine').inside {
+
+    buildImage.inside {
+      /* The 'npm rebuild node-sass --force' script should be executed if the last 'npm install' was run on a different platform, eg. alpine, and now debian */
+      // sh 'npm rebuild node-sass --force'
       sh 'npm install'
     }
   }
 
   /* This step runs the unit tests for the angular project */
-  /* stage('Test Application') {
-    docker.image('node:9-alpine').inside {
-      sh 'npm run test'
+  stage('Test Application') {
+    parallel 'End to End Tests': {
+      buildImage.inside {
+        sh 'npm run e2e'
+      }
+      /* TODO: Get test output from the e2e tests */
+    },
+    'Unit Tests (CI)': {
+      buildImage.inside {
+        sh 'npm run test:ci'
+      }
+      /* TODO: Confirm that we are getting the test restults out */
+      junit 'reports/junit/*.xml'
     }
-
-    junit 'reports/junit/*.xml'
-  } */
+  }
 
   /* This step builds the angular application, leaves it in the default dist/ directory */
   stage('Build Application') {
-    docker.image('node:9-alpine').inside {
+    buildImage.inside {
       sh 'npm run build'
     }
   }
@@ -43,17 +62,17 @@ node {
     dockerImage = docker.build(imageName, "dist/")
   }
 
-//  stage('Push Docker Image') {
-//    /* Push the container to the custom Registry */
-//
-//    /* Finally, we'll push the image with two tags:
-//       * First, the incremental build number from Jenkins
-//       * Second, the 'latest' tag.
-//       * Pushing multiple tags is cheap, as all the layers are reused. */
-//    docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
-//      dockerImage.push()
-//    }
-//  }
+  stage('Push Docker Image') {
+    /* Push the container to the custom Registry */
+
+    /* Finally, we'll push the image with two tags:
+       * First, the incremental build number from Jenkins
+       * Second, the 'latest' tag.
+       * Pushing multiple tags is cheap, as all the layers are reused. */
+    docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
+      dockerImage.push()
+    }
+  }
 
   stage('Deploy') {
     // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
