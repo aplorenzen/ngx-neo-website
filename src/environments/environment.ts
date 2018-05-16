@@ -15,5 +15,6 @@ export const environment = {
   ],
   /* Autopopulated fields from the replace.buildinfo.js script */
   buildUrl: 'unset',
-  buildId: 'unset'
+  buildId: 'unset',
+  dockerImageName: 'unset'
 };

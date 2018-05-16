@@ -7,6 +7,9 @@ node {
 
   def buildDockerfile = 'src/docker/chrome-test.Dockerfile'
   def buildImage
+  /* Local varables for holding the docker image and the image name */
+  def targetDockerImage
+  def targetImageName
 
   /* Building customer container for building and testing the project */
   stage('Prepare Build Container') {
@@ -27,7 +30,11 @@ node {
   /* This step replaces constants in the environments.ts files for the Angular project, making them available in the
      build output if used in the source code */
   stage('Update Build Information') {
+    /* Determine the image name */
+    targetImageName = sh returnStdout: true, script: './get_docker_image_name.sh'
+
     buildImage.inside {
+      sh 'export IMAGE_NAME=' + targetImageName
       sh 'npm run jenkins:buildinfo'
     }
   }
@@ -68,19 +75,11 @@ node {
     }
   }
 
-  /* Local varables for holding the docker image and the image name */
-  def imageName
-  def dockerImage
-
   /* This step just builds the image, and leaves it in the local image cache, tagged */
   stage('Build Docker Image') {
-
-    /* Determine the image name */
-    imageName = sh returnStdout: true, script: './get_docker_image_name.sh'
-
     /* Build the docker image, from the project root directory, with the dist/ directory as the build context */
     /* docker build -t <imagename> dist/ */
-    dockerImage = docker.build(imageName, "dist/")
+    targetDockerImage = docker.build(targetImageName, "dist/")
   }
 
   stage('Push Docker Image') {
@@ -91,13 +90,13 @@ node {
        * Second, the 'latest' tag.
        * Pushing multiple tags is cheap, as all the layers are reused. */
     docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
-      dockerImage.push()
+      targetDockerImage.push()
     }
   }
 
   stage('Deploy') {
     // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
-    sh 'export IMAGE_NAME=' + imageName + ' && ' + 'docker-compose -f src/docker/docker-compose.yml up -d'
+    sh 'export IMAGE_NAME=' + targetImageName + ' && ' + 'docker-compose -f src/docker/docker-compose.yml up -d'
   }
 }
 

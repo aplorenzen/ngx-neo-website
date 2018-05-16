@@ -13,6 +13,7 @@ export class FooterComponent implements OnInit {
   buildId = environment.buildId;
   gitUrl = environment.gitUrl;
   buildUrl = environment.buildUrl;
+  dockerImageName = environment.dockerImageName;
 
   ngOnInit() {
   }

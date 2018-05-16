@@ -31,11 +31,13 @@ function replaceEnvironmentValues(files) {
       files: files,
       from: [
         /buildUrl: '(.*)'/g,
-        /buildId: '(.*)'/g
+        /buildId: '(.*)'/g,
+        /dockerImageName: '(.*)'/g
       ],
       to: [
         "buildUrl: '"+ process.env.RUN_DISPLAY_URL + "'",
-        "buildId: '"+ process.env.BUILD_ID + "'"
+        "buildId: '"+ process.env.BUILD_ID + "'",
+        "dockerImageName: '"+ process.env.IMAGE_NAME + "'"
       ],
       allowEmptyPaths: false,
     };
