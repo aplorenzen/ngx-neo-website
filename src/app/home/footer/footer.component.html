@@ -26,14 +26,18 @@
       </div>
     </div>
     <div class="row">
-      <div class="col text-center">
-        <a *ngIf="buildUrl && buildId" href="{{buildUrl}}" class="btn btn-success" role="button">
+      <div *ngIf="buildUrl && buildId" class="col text-center">
+        <a href="{{buildUrl}}" class="btn btn-success btn-footer-link" role="button">
           <img src="../../../assets/jenkins_logo.png" width="20" height="20" alt="Jenkins"/>
           Build ({{buildId}})</a>
-        <a href="{{gitUrl}}" class="btn btn-info" role="button">
+      </div>
+        <div class="col text-center">
+        <a href="{{gitUrl}}" class="btn btn-info btn-footer-link" role="button">
           <img src="../../../assets/logo_github.png" width="20" height="20" alt="Github"/>
           <span translate="footer.opensource">Hey! This site is open source!</span></a>
-        <a href="{{dockerImageName}}" class="btn btn-danger" role="button">
+        </div>
+          <div class="col text-center">
+        <a href="{{dockerImageName}}" class="btn btn-danger btn-footer-link" role="button">
           <img src="../../../assets/logo_docker_2.png" width="20" height="20" alt="Docker"/>
           <span>{{dockerImageName}}</span></a>
       </div>

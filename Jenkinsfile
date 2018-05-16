@@ -5,11 +5,13 @@ node {
 
   checkout scm
 
-  def buildDockerfile = 'src/docker/chrome-test.Dockerfile'
+  String buildDockerfile = 'src/docker/chrome-test.Dockerfile'
   def buildImage
+
   /* Local varables for holding the docker image and the image name */
   def targetDockerImage
-  def targetImageName
+  String targetImageName
+  String targetDockerRegistry
 
   /* Building customer container for building and testing the project */
   stage('Prepare Build Container') {
@@ -30,7 +32,11 @@ node {
   /* This step replaces constants in the environments.ts files for the Angular project, making them available in the
      build output if used in the source code */
   stage('Update Build Information') {
-    /* Determine the image name */
+
+    /* Set the registry that we will push the built docker image to */
+    /* TODO: This should be determined from config in the package.json */
+    targetDockerRegistry = 'https://registry.hub.docker.com'
+    /* Determine the image name with the helper script */
     targetImageName = sh returnStdout: true, script: './get_docker_image_name.sh'
 
     buildImage.inside {
@@ -88,7 +94,7 @@ node {
        * First, the incremental build number from Jenkins
        * Second, the 'latest' tag.
        * Pushing multiple tags is cheap, as all the layers are reused. */
-    docker.withRegistry('https://registry.hub.docker.com', 'aplorenzen-dockerhub') {
+    docker.withRegistry(targetDockerRegistry, 'aplorenzen-dockerhub') {
       targetDockerImage.push()
     }
   }
@@ -99,19 +105,6 @@ node {
   }
 }
 
-
-
-// app.push("${env.BUILD_NUMBER}")
-// app.push("latest")
-
-//  stage('Push docker image') {
-//    docker.withRegistry('https://docker.neoprime.it', 'andreas@docker.neoprime.it') {
-//      def customImage = docker.build("neo/neo-website:${env.BUILD_ID}", "-f target/Dockerfile target/")
-//      /* Push the container to the custom Registry */
-//      customImage.push()
-//    }
-//  }
-//
 //  stage('SonarQube analysis') {
 //    docker.image('docker.neoprime.it/neo/website-build-image:1.1').inside {
 //      withSonarQubeEnv('sonar.neoprime.it') {
@@ -121,20 +114,3 @@ node {
 //      }
 //    }
 //  }
-//
-//  stage('Deploy') {
-//    // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
-//    sh "src/main/docker/redeploy.sh ${env.BUILD_ID}"
-//  }
-
-//  stage('Code analysis') {
-//    docker.image('gradle:4.2.1-alpine').inside {
-//      sh './gradlew sonarqube -Dsonar.host.url=https://sonar.neoprime.it -Dsonar.login=7a63cb80baf2d9763738d9fbf2c55888b94c10c6'
-//    }
-//  }
-
-// stage('Front-end') {
-//   docker.image('node:7-alpine').inside {
-//            sh 'node --version'
-//      }
-//}
