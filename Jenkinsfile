@@ -34,8 +34,7 @@ node {
     targetImageName = sh returnStdout: true, script: './get_docker_image_name.sh'
 
     buildImage.inside {
-      sh 'export IMAGE_NAME=' + targetImageName
-      sh 'npm run jenkins:buildinfo'
+      sh 'export IMAGE_NAME=' + targetImageName + ' && ' + 'npm run jenkins:buildinfo'
     }
   }
 
