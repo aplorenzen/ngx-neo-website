@@ -1,10 +1,12 @@
 let replace = require('replace-in-file');
 let packageJson = require("./package.json");
-/* let buildVersion = packageJson.version; */
 
 /*
+TODO: It could be fun to publish some more facts on the webapp from the build process
+  here are some ideas:
+
 BlueOcean run URL - RUN_DISPLAY_URL
-Build number - BUILD_ID
+Build number - BUILD_ID / BUILD_DISPLAY_NAME: '#60',
 Git repository - GIT_REPO_URL
 Version - ...
 Docker image name - ...
@@ -13,34 +15,27 @@ npm version
 Jenkins version
 Node version
 ng version
-ngx version
+ngx version */
+/* let buildVersion = packageJson.version; */
 
-
-BUILD_DISPLAY_NAME: '#60',
-
-*/
-
-console.log("process.env.RUN_DISPLAY_URL: " + process.env.RUN_DISPLAY_URL);
-console.log("process.env.BUILD_ID: " + process.env.BUILD_ID);
-console.log("process.env.GIT_URL: " + process.env.GIT_URL);
+/* Logging everything while developing this feature */
 console.log(process.env);
 
-replaceEnvironmentValue('src/environments/environment*.ts');
+/* Replace in the environment files */
+replaceEnvironmentValues('src/environments/environment*.ts');
 
-function replaceEnvironmentValue(files) {
+function replaceEnvironmentValues(files) {
 
   try {
     const replaceOptions = {
       files: files,
       from: [
         /buildUrl: '(.*)'/g,
-        /buildId: '(.*)'/g,
-        /gitUrl: '(.*)'/g
+        /buildId: '(.*)'/g
       ],
       to: [
         "buildUrl: '"+ process.env.RUN_DISPLAY_URL + "'",
-        "buildId: '"+ process.env.BUILD_ID + "'",
-        "gitUrl: '"+ process.env.GIT_URL + "'"
+        "buildId: '"+ process.env.BUILD_ID + "'"
       ],
       allowEmptyPaths: false,
     };

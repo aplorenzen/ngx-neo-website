@@ -9,7 +9,7 @@
           <a href="mailto:andreas@neoprime.it">andreas@neoprime.it</a>
         </div>
 
-        <div class="col text-center">
+        <div class="col text-center social-link-bar">
           <a href="https://twitter.com/aplorenzen" target="_blank">
             <img src="../../../assets/logo_twitter_2.png" width="37" height="37" alt="Twitter"/>
           </a>
@@ -23,9 +23,16 @@
             <img src="../../../assets/logo_github_3.png" width="37" height="37" alt="Github"/>
           </a>
         </div>
-
-        <a *ngIf="buildUrl && buildId" href="{{buildUrl}}" class="btn btn-info" role="button">Build ({{buildId}})</a>
-        <a href="{{gitUrl}}" class="btn btn-info" role="button">Hey! This site is open source!</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <a *ngIf="buildUrl && buildId" href="{{buildUrl}}" class="btn btn-success" role="button">
+          <img src="../../../assets/jenkins_logo.png" width="20" height="20" alt="Jenkins"/>
+          Build ({{buildId}})</a>
+        <a href="{{gitUrl}}" class="btn btn-info" role="button">
+          <img src="../../../assets/logo_github.png" width="20" height="20" alt="Github"/>
+          <span translate="footer.opensource">Hey! This site is open source!</span></a>
       </div>
     </div>
   </div>
