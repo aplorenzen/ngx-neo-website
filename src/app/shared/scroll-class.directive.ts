@@ -14,7 +14,7 @@ export class ScrollClassDirective {
               private renderer: Renderer2) {
   }
 
-  @Input('appScrollClass') public cssClass: string;
+  @Input() public cssClass: string;
   @Input() public appScrollOffset = 100;
 
   @HostListener('window:scroll', ['$event'])

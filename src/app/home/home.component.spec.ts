@@ -1,14 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { NgxPageScrollModule } from 'ngx-page-scroll';
-
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
 import { BannerComponent } from '@app/home/banner/banner.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SkillsComponent } from '@app/home/skills/skills.component';
+import { FooterComponent } from '@app/home/footer/footer.component';
+import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -20,14 +21,18 @@ describe('HomeComponent', () => {
           CoreModule,
           SharedModule,
           HttpClientTestingModule,
-          NgxPageScrollModule
+          ScrollToModule
         ],
         declarations: [
           HomeComponent,
           BannerComponent,
-          ProfileComponent
+          ProfileComponent,
+          SkillsComponent,
+          FooterComponent
         ],
-        providers: [QuoteService]
+        providers: [
+          QuoteService,
+          ScrollToService]
       })
       .compileComponents();
   }));

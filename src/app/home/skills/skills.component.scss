@@ -1,0 +1,55 @@
+@import "../../../theme/theme-variables";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.skill-image {
+  width: 96px;
+  height: 96px;
+}
+
+.skill-since {
+  color: $theme-primary;
+}
+
+// TODO: Tune this a bit, that's a lot of break points!
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1330px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1425px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1710px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 1900px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .container {
+    max-width: 2090px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .container {
+    max-width: 2280px;
+  }
+}

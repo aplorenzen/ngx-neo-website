@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# VI edtor swp temp files
+*.swp
+
 # Compiled output
 /dist
 /tmp

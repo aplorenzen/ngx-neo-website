@@ -1,0 +1,47 @@
+<section id="contact" class="footer text-white">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading" translate>Awaiting connection...</h2>
+        <hr class="my-4"/>
+        <div class="footer-email">
+          <a href="mailto:andreas@neoprime.it">andreas@neoprime.it</a>
+        </div>
+
+        <div class="col text-center social-link-bar">
+          <a href="https://twitter.com/aplorenzen" target="_blank">
+            <img src="../../../assets/logo_twitter_2.png" width="37" height="37" alt="Twitter"/>
+          </a>
+          <a href="https://www.linkedin.com/in/andreas-lorenzen" target="_blank">
+            <img src="../../../assets/logo_linkedin_2.png" width="37" height="37" alt="Linkedin"/>
+          </a>
+          <a href="https://stackoverflow.com/users/8346801?tab=profile" target="_blank">
+            <img src="../../../assets/logo_stackoverflow_3.png" width="37" height="37" alt="Stack Overflow"/>
+          </a>
+          <a href="https://github.com/aplorenzen" target="_blank">
+            <img src="../../../assets/logo_github_3.png" width="37" height="37" alt="Github"/>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="buildUrl && buildId" class="col text-center">
+        <a href="{{buildUrl}}" class="btn btn-success btn-footer-link" role="button">
+          <img src="../../../assets/jenkins_logo.png" width="20" height="20" alt="Jenkins"/>
+          Build ({{buildId}})</a>
+      </div>
+        <div class="col text-center">
+        <a href="{{gitUrl}}" class="btn btn-info btn-footer-link" role="button">
+          <img src="../../../assets/logo_github.png" width="20" height="20" alt="Github"/>
+          <span translate="footer.opensource">Hey! This site is open source!</span></a>
+        </div>
+          <div class="col text-center">
+        <a href="{{dockerImageName}}" class="btn btn-danger btn-footer-link" role="button">
+          <img src="../../../assets/logo_docker_2.png" width="20" height="20" alt="Docker"/>
+          <span>{{dockerImageName}}</span></a>
+      </div>
+    </div>
+  </div>
+
+</section>

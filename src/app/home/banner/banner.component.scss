@@ -1,23 +1,11 @@
 @import "../../../theme/theme-variables";
 
-/*.banner {
-  height: 100vh;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-image: url("../../../assets/more-coffee-desktop-background-18.jpeg");
-  background-position: center center;
-  background-size: cover;
-}
-*/
-
 .banner {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background: url("../../../assets/more-coffee-desktop-background-18.jpeg") center center;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
+  background: url("../../../assets/background.jpg") center center;
   background-size: cover;
+  height: 100%;
 }
 
 .banner hr {

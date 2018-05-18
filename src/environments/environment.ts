@@ -7,10 +7,14 @@ export const environment = {
   production: false,
   version: '(dev)',
   serverUrl: '/api',
-  defaultLanguage: 'en-US',
+  defaultLanguage: 'English',
+  gitUrl: 'https://github.com/aplorenzen/ngx-neo-website',
   supportedLanguages: [
-    'en-US',
-    'fr-FR',
-    'da-DK'
-  ]
+    'English',
+    'Dansk'
+  ],
+  /* Autopopulated fields from the replace.buildinfo.js script */
+  buildUrl: 'unset',
+  buildId: 'unset',
+  dockerImageName: 'unset'
 };

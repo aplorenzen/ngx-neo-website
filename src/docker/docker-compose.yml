@@ -1,0 +1,21 @@
+version: "3"
+
+networks:
+
+  neo-nginx-back:
+    external:
+      name: neo-nginx-back
+
+services:
+
+  neo-website:
+    image: ${IMAGE_NAME}
+    container_name: neo-website
+    restart: always
+    networks:
+      - neo-nginx-back
+    environment:
+      - VIRTUAL_HOST=neoprime.it
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=neoprime.it
+      - LETSENCRYPT_EMAIL=admin@neoprime.it

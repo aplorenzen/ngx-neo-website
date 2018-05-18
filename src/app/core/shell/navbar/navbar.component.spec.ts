@@ -2,10 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { I18nService } from '../../i18n.service';
 import { NavbarComponent } from './navbar.component';
-import {NgxPageScrollModule} from 'ngx-page-scroll';
+import {ScrollToModule, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -17,13 +18,15 @@ describe('NavbarComponent', () => {
         RouterTestingModule,
         NgbModule.forRoot(),
         TranslateModule.forRoot(),
-        NgxPageScrollModule
+        BrowserAnimationsModule,
+        ScrollToModule
       ],
       declarations: [
         NavbarComponent
       ],
       providers: [
-        I18nService
+        I18nService,
+        ScrollToService
       ]
     })
     .compileComponents();

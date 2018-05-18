@@ -133,5 +133,11 @@ Development, build and quality processes are based on [angular-cli](https://gith
 
 TODO: Add all dependencies since 'ngx-rocket new'
 
-Added anchor scrolling component ngx-page-scroll, from https://www.npmjs.com/package/ngx-page-scroll
+Using pace-progress, for the loading screen for the app, from: https://www.npmjs.com/package/pace-progress
+
+# Docker
+
+Going to use the httpd (Apache) image to host the production application.
+
+https://hub.docker.com/_/httpd/
 
