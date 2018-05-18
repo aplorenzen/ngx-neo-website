@@ -1,6 +1,6 @@
 {
   "name": "ngx-neo-website",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "MIT",
   "private": true,
   "config": {
@@ -9,6 +9,7 @@
   "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
+    "jenkins:buildinfo": "node replace.buildinfo.js",
     "start": "npm run env -s && ng serve --aot --proxy-config proxy.conf.js",
     "lint": "ng lint --type-check && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
     "test": "ng test",
@@ -71,6 +72,7 @@
     "karma-junit-reporter": "^1.2.0",
     "protractor": "^5.3.2",
     "puppeteer": "^1.4.0",
+    "replace-in-file": "^3.4.0",
     "stylelint": "^9.2.0",
     "stylelint-config-recommended-scss": "~3.1.0",
     "stylelint-config-standard": "~18.1.0",

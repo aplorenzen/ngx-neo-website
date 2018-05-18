@@ -4,10 +4,15 @@ import env from './.env';
 export const environment = {
   production: true,
   version: env.npm_package_version,
+  gitUrl: 'https://github.com/aplorenzen/ngx-neo-website',
   serverUrl: 'https://api.chucknorris.io',
   defaultLanguage: 'English',
   supportedLanguages: [
     'English',
     'Dansk'
-  ]
+  ],
+  /* Autopopulated fields from the replace.buildinfo.js script */
+  buildUrl: 'unset',
+  buildId: 'unset',
+  dockerImageName: 'unset'
 };
