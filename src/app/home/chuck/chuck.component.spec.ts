@@ -3,17 +3,17 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { HomeComponent } from './home.component';
-import { QuoteService } from './quote.service';
+import { ChuckComponent } from './chuck.component';
+import { QuoteService } from '@app/home/quote.service';
 import { BannerComponent } from '@app/home/banner/banner.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from '@app/home/profile/profile.component';
 import { SkillsComponent } from '@app/home/skills/skills.component';
 import { FooterComponent } from '@app/home/footer/footer.component';
 import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('ChuckComponent', () => {
+  let component: ChuckComponent;
+  let fixture: ComponentFixture<ChuckComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,7 +24,7 @@ describe('HomeComponent', () => {
           ScrollToModule
         ],
         declarations: [
-          HomeComponent,
+          ChuckComponent,
           BannerComponent,
           ProfileComponent,
           SkillsComponent,
@@ -38,7 +38,7 @@ describe('HomeComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(ChuckComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

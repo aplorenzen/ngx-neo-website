@@ -1,0 +1,20 @@
+<app-banner></app-banner>
+<app-profile></app-profile>
+<app-skills></app-skills>
+
+<section class="bg-primary" id="chuck">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2>
+
+          <span translate>Random Chuck Norris Fact</span>
+        </h2>
+        <img class="logo" src="../../assets/cowboy_hat.png" alt="Chuck Norris"/>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <q [hidden]="isLoading">{{quote}}</q>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
