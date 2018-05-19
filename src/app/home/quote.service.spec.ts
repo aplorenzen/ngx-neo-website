@@ -61,7 +61,7 @@ describe('QuoteService', () => {
       // Assert
       randomQuoteSubscription.subscribe((quote: string) => {
         expect(typeof quote).toEqual('string');
-        expect(quote).toContain('Error');
+        expect(quote).toContain('offline');
       });
       httpMock.expectOne({}).flush(null, {
         status: 500,
