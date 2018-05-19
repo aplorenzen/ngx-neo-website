@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { Route, extract } from '@app/core';
-import { HomeComponent } from './home.component';
+import { Route } from '@app/core';
+import { ChuckComponent } from '@app/home/chuck/chuck.component';
 
 const routes: Routes = [
   Route.withShell([
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent }
+    { path: 'home', component: ChuckComponent }
   ])
 ];
 

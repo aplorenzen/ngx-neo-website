@@ -8,12 +8,12 @@ import { NgsRevealModule } from 'ng-scrollreveal';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { ChuckComponent } from '@app/home/chuck/chuck.component';
 import { QuoteService } from './quote.service';
-import { BannerComponent } from './banner/banner.component';
-import { ProfileComponent } from './profile/profile.component';
-import { FooterComponent } from './footer/footer.component';
-import { SkillsComponent } from './skills/skills.component';
+import { BannerComponent } from '@app/home/banner/banner.component';
+import { ProfileComponent } from '@app/home/profile/profile.component';
+import { FooterComponent } from '@app/home/footer/footer.component';
+import { SkillsComponent } from '@app/home/skills/skills.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     ScrollToModule
   ],
   declarations: [
-    HomeComponent,
+    ChuckComponent,
     BannerComponent,
     ProfileComponent,
     SkillsComponent,
