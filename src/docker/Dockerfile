@@ -22,7 +22,7 @@ RUN sed -i \
 # Append to the published directory, that we want to rewrite any request that is not an actual file
 # to the index.html page.
 RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was written from the Dockerfile when building the image ###\n\
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript\n\
     DirectoryIndex index.html\n\
     RewriteEngine on\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
