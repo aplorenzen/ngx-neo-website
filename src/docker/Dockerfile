@@ -22,7 +22,7 @@ RUN sed -i \
 # to the index.html page.
 RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was written from the Dockerfile when building the image ###\n\
     DirectoryIndex index.html\n\
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript\n\
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript\n\
     RewriteEngine on\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
