@@ -76,7 +76,7 @@ node {
     buildImage.inside {
       sh 'echo $RUN_DISPLAY_URL'
 
-      sh 'npm run build'
+      sh 'npm run build:ci'
     }
   }
 
