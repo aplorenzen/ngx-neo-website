@@ -24,7 +24,7 @@ export class QuoteService {
       .get(routes.quote(context))
       .pipe(
         map((body: any) => body.value),
-        catchError(() => of('Error, could not load joke :-('))
+        catchError(() => of('Chuck facts are offline 😞'))
       );
   }
 
