@@ -27,12 +27,19 @@ RUN sed -i \
 # to the index.html page.
 RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was written from the Dockerfile when building the image ###\n\
     DirectoryIndex index.html\n\
+    \n\
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript image/svg+xml\n\
+    \n\
     ExpiresActive On\n\
-    ExpiresByType image/gif "access plus 1 month"\n\
-    ExpiresByType image/png "access plus 1 month"\n\
-    ExpiresByType image/jpg "access plus 1 month"\n\
-    ExpiresByType image/jpeg "access plus 1 month"\n\
+    ExpiresByType image/gif "access plus 5 days"\n\
+    ExpiresByType image/png "access plus 5 days"\n\
+    ExpiresByType image/jpg "access plus 5 days"\n\
+    ExpiresByType image/jpeg "access plus 5 days"\n\
+    ExpiresByType text/javascript "access plus 5 days"\n\
+    ExpiresByType application/javascript "access plus 5 days"\n\
+    ExpiresByType image/svg+xml "access plus 5 days"\n\
+    ExpiresByType text/css "access plus 5 days"\n\
+    \n\
     RewriteEngine on\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
