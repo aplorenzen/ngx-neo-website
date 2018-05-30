@@ -15,6 +15,7 @@ import { ProfileComponent } from '@app/home/profile/profile.component';
 import { FooterComponent } from '@app/home/footer/footer.component';
 import { SkillsComponent } from '@app/home/skills/skills.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     BannerComponent,
     ProfileComponent,
     SkillsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   providers: [
     QuoteService

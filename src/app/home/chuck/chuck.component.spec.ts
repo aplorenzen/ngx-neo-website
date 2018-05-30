@@ -5,11 +5,6 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ChuckComponent } from './chuck.component';
 import { QuoteService } from '@app/home/quote.service';
-import { BannerComponent } from '@app/home/banner/banner.component';
-import { ProfileComponent } from '@app/home/profile/profile.component';
-import { SkillsComponent } from '@app/home/skills/skills.component';
-import { FooterComponent } from '@app/home/footer/footer.component';
-import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 describe('ChuckComponent', () => {
   let component: ChuckComponent;
@@ -20,19 +15,13 @@ describe('ChuckComponent', () => {
         imports: [
           CoreModule,
           SharedModule,
-          HttpClientTestingModule,
-          ScrollToModule
+          HttpClientTestingModule
         ],
         declarations: [
-          ChuckComponent,
-          BannerComponent,
-          ProfileComponent,
-          SkillsComponent,
-          FooterComponent
+          ChuckComponent
         ],
         providers: [
-          QuoteService,
-          ScrollToService]
+          QuoteService]
       })
       .compileComponents();
   }));
