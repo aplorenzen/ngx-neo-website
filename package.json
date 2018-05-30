@@ -9,6 +9,7 @@
   "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
+    "build:ci": "npm run env -s && ng build --prod --build-optimizer --vendor-chunk",
     "jenkins:buildinfo": "node replace.buildinfo.js",
     "start": "npm run env -s && ng serve --aot --proxy-config proxy.conf.js",
     "lint": "ng lint --type-check && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
