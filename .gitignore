@@ -5,6 +5,7 @@
 
 # Compiled output
 /dist
+/dist-prerender
 /tmp
 /out-tsc
 

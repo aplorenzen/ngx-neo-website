@@ -17,7 +17,11 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition(
+      // this is just the name of our application
+      // configured in angular-cli.json
+      { appId: 'ngx-neo-website' }
+    ),
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot(),
