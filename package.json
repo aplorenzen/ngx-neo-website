@@ -39,6 +39,8 @@
     "@ng-bootstrap/ng-bootstrap": "^1.1.2",
     "@ngx-translate/core": "^9.1.1",
     "@nicky-lenaers/ngx-scroll-to": "^0.6.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "bootstrap": "4.0.0",
     "core-js": "^2.5.2",
     "jquery": "^3.3.1",
