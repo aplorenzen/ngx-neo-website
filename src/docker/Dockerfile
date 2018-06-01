@@ -41,6 +41,8 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
         ExpiresByType text/css "access plus 5 days"\n\
     \n\
     RewriteEngine on\n\
+        RewriteCond %{HTTP_HOST} ^www\.neoprime\.it$\n\
+        RewriteRule ^/?$ "https\:\/\/neoprime\.it\/" [R=301,L]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
         RewriteRule ^ - [L]\n\
