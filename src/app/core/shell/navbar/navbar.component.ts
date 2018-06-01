@@ -1,5 +1,7 @@
+import { Inject, PLATFORM_ID } from '@angular/core';
 import {Component, HostListener, OnInit} from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { isPlatformBrowser } from '@angular/common';
 
 import { I18nService } from '../../i18n.service';
 
@@ -27,15 +29,20 @@ export class NavbarComponent implements OnInit {
   menuState = 'out';
   mobileView = false;
 
-  constructor(private i18nService: I18nService) {}
+  constructor(private i18nService: I18nService,
+              @Inject(PLATFORM_ID) private platformId: Object) {}
 
   handleResize() {
-    if (window.innerWidth >= 576) {
-      this.menuState = 'out';
-      this.mobileView = false;
-    } else {
-      this.menuState = 'in';
-      this.mobileView = true;
+    /* Avoid access to window object when rendering with SSR - need to refator to use an abstraction of window
+    instead. */
+    if (isPlatformBrowser(this.platformId)) {
+      if (window.innerWidth >= 576) {
+        this.menuState = 'out';
+        this.mobileView = false;
+      } else {
+        this.menuState = 'in';
+        this.mobileView = true;
+      }
     }
   }
 
