@@ -2,13 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <h2>
-
-          <span translate>Random Chuck Norris Fact</span>
-        </h2>
-        <img class="logo" src="./../../../assets/chuck_norris_3.png" alt="Chuck Norris"/>
+        <h2 translate>Random Chuck Norris Fact</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
         <app-loader [isLoading]="isLoading"></app-loader>
         <q [hidden]="isLoading">{{quote}}</q>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <img class="logo" src="./../../../assets/chuck_norris_4.png" alt="Chuck Norris" title="Chuck Norris"/>
       </div>
     </div>
   </div>
