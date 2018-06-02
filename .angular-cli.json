@@ -12,6 +12,7 @@
         "assets",
         "favicon.ico",
         "robots.txt",
+        "sitemap.xml",
         {
           "glob": "Dockerfile",
           "input": "docker/",
