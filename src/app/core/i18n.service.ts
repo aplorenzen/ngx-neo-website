@@ -1,6 +1,8 @@
+import { Inject, PLATFORM_ID } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { includes } from 'lodash';
+import { isPlatformBrowser } from '@angular/common';
 
 import { Logger } from './logger.service';
 import * as enUS from '../../translations/en-US.json';
@@ -25,7 +27,10 @@ export class I18nService {
   defaultLanguage: string;
   supportedLanguages: string[];
 
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService,
+              /* Inject the platoform id, we need this to determine if we are rendering in a browser. (SSR render issue
+              with window and localStorage */
+              @Inject(PLATFORM_ID) private platformId: Object) {
     // Embed languages to avoid extra HTTP requests
     translateService.setTranslation('English', enUS);
     translateService.setTranslation('Dansk', daDK);
@@ -43,7 +48,13 @@ export class I18nService {
     this.language = '';
 
     this.translateService.onLangChange
-      .subscribe((event: LangChangeEvent) => { localStorage.setItem(languageKey, event.lang); });
+      .subscribe((event: LangChangeEvent) => {
+        /* Avoid access to localStorage when rendering with SSR - need to refator to use an abstraction of localStorage
+        instead. */
+        if (!isPlatformBrowser(this.platformId)) {
+          localStorage.setItem(languageKey, event.lang);
+        }
+      });
   }
 
   /**
@@ -53,7 +64,14 @@ export class I18nService {
    * @param {string} language The IETF language code to set.
    */
   set language(language: string) {
-    language = language || localStorage.getItem(languageKey) || this.translateService.getBrowserCultureLang();
+    /* Avoid access to localStorage when rendering with SSR - need to refator to use an abstraction of localStorage
+    instead. */
+    if (!isPlatformBrowser(this.platformId)) {
+      language = language || this.translateService.getBrowserCultureLang();
+    } else {
+      language = language || localStorage.getItem(languageKey) || this.translateService.getBrowserCultureLang();
+    }
+
     let isSupportedLanguage = includes(this.supportedLanguages, language);
 
     // If no exact match is found, search without the region

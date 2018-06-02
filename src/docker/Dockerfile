@@ -31,16 +31,18 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript image/svg+xml\n\
     \n\
     ExpiresActive On\n\
-    ExpiresByType image/gif "access plus 5 days"\n\
-    ExpiresByType image/png "access plus 5 days"\n\
-    ExpiresByType image/jpg "access plus 5 days"\n\
-    ExpiresByType image/jpeg "access plus 5 days"\n\
-    ExpiresByType text/javascript "access plus 5 days"\n\
-    ExpiresByType application/javascript "access plus 5 days"\n\
-    ExpiresByType image/svg+xml "access plus 5 days"\n\
-    ExpiresByType text/css "access plus 5 days"\n\
+        ExpiresByType image/gif "access plus 7 days"\n\
+        ExpiresByType image/png "access plus 7 days"\n\
+        ExpiresByType image/jpg "access plus 7 days"\n\
+        ExpiresByType image/jpeg "access plus 7 days"\n\
+        ExpiresByType text/javascript "access plus 7 days"\n\
+        ExpiresByType application/javascript "access plus 7 days"\n\
+        ExpiresByType image/svg+xml "access plus 7 days"\n\
+        ExpiresByType text/css "access plus 7 days"\n\
     \n\
     RewriteEngine on\n\
+        RewriteCond %{HTTP_HOST} ^www\.neoprime\.it$\n\
+        RewriteRule ^/?$ "https\:\/\/neoprime\.it\/" [R=301,L]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
         RewriteRule ^ - [L]\n\
@@ -71,4 +73,4 @@ RUN chmod -R 440 \
   /usr/local/apache2/htdocs/*
 
 # TODO: Explain why this is needed!
-RUN chmod +x /usr/local/apache2/htdocs/assets
+RUN chmod +x /usr/local/apache2/htdocs/assets /usr/local/apache2/htdocs/home
