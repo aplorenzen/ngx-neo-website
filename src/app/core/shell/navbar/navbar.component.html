@@ -11,17 +11,17 @@
   <div id="navbar-menu" class="collapse navbar-collapse neo-navbar-menu" [@slideInOut]="menuState">
     <div class="navbar-nav neo-navbar-nav">
       <div class="nav-item">
-        <a class="nav-link text-uppercase" title="Profile, Andreas Lorenzen" (click)="hideMenu()" [ngx-scroll-to]="'#profile'">
+        <a class="nav-link text-uppercase" title="Profile, Andreas Lorenzen" (click)="hideMenu()" [ngx-scroll-to]="'#profile'" [routerLink]="['/home']">
           <span translate>Profile</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" title="Key Skills, Andreas Lorenzen" (click)="hideMenu()" [ngx-scroll-to]="'#skills'">
+        <a class="nav-link text-uppercase" title="Key Skills, Andreas Lorenzen" (click)="hideMenu()" [ngx-scroll-to]="'#skills'" [routerLink]="['/home']">
           <span translate>Key Skills</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" title="Contact, Andreas Lorenzen" (click)="hideMenu()" [ngx-scroll-to]="'#contact'">
+        <a class="nav-link text-uppercase" title="Contact, Andreas Lorenzen" (click)="hideMenu()" [ngx-scroll-to]="'#contact'" [routerLink]="['/home']">
           <span translate>Contact</span>
         </a>
       </div>
