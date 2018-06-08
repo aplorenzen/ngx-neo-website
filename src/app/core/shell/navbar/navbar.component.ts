@@ -1,5 +1,5 @@
 import { Inject, PLATFORM_ID } from '@angular/core';
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { isPlatformBrowser } from '@angular/common';
 

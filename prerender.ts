@@ -13,7 +13,10 @@ const index = fs
 // we could automate this based on the app.routes.ts file but
 // to keep it simple let's just create an array with the routes we want
 // to prerender
-const paths = ['/home'];
+const paths = [
+  '/home',
+  '/404'
+];
 
 enableProdMode();
 

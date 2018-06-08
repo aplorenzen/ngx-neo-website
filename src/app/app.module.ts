@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     ScrollToModule.forRoot()
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   providers: [
   ],
