@@ -46,7 +46,7 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
         RewriteRule ^ - [L]\n\
-    RewriteRule ^ /index.html\n' \
+    ErrorDocument 404 /404/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
@@ -72,5 +72,8 @@ RUN chown -R root:daemon \
 RUN chmod -R 440 \
   /usr/local/apache2/htdocs/*
 
-# TODO: Explain why this is needed!
-RUN chmod +x /usr/local/apache2/htdocs/assets /usr/local/apache2/htdocs/home
+# Ensure for all the directories created, that the files within them can be read. We need the
+# execution access privilege on the directory for this. Dynamically apply this to all directories
+# at least one level into the served root. (-mindepth 1, otherwise the served directory itself
+# would be included - no need for that.
+find /usr/local/apache2/htdocs/ -mindepth 1 -type d -exec chmod -x {} \;
