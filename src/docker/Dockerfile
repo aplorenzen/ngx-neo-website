@@ -46,7 +46,7 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
         RewriteRule ^ - [L]\n\
-    RewriteRule ^ /index.html\n' \
+    ErrorDocument 404 /404/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
