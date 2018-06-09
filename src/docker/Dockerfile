@@ -73,4 +73,4 @@ RUN chmod -R 440 \
   /usr/local/apache2/htdocs/*
 
 # TODO: Explain why this is needed!
-RUN chmod +x /usr/local/apache2/htdocs/assets /usr/local/apache2/htdocs/home
+RUN chmod +x /usr/local/apache2/htdocs/assets /usr/local/apache2/htdocs/home /usr/local/apache2/htdocs/404
