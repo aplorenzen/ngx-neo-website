@@ -76,4 +76,4 @@ RUN chmod -R 440 \
 # execution access privilege on the directory for this. Dynamically apply this to all directories
 # at least one level into the served root. (-mindepth 1, otherwise the served directory itself
 # would be included - no need for that.
-find /usr/local/apache2/htdocs/ -mindepth 1 -type d -exec chmod -x {} \;
+RUN find /usr/local/apache2/htdocs/ -mindepth 1 -type d -exec chmod -x {} \;
