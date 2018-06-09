@@ -26,7 +26,7 @@ import { I18nService } from '../../i18n.service';
 })
 export class NavbarComponent implements OnInit {
 
-  menuState = 'out';
+  menuState = 'in';
   mobileView = false;
 
   constructor(private i18nService: I18nService,
