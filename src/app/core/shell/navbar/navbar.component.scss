@@ -24,27 +24,27 @@
   margin-bottom: 6px;
 }
 
-.nav-link,
-.nav-link:focus {
+.nav-item .nav-link,
+.nav-item .nav-link:focus {
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: $theme-dark;
 }
 
-.nav-link:hover,
-.nav-link:focus:hover {
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus:hover {
   color: $theme-primary;
 }
 
-.nav-link.active,
-.nav-link:focus.active {
+.nav-item .nav-link.active,
+.nav-item .nav-link:focus.active {
   color: $theme-primary;
   background-color: transparent;
 }
 
-.nav-link.active:hover,
-.nav-link:focus.active:hover {
+.nav-item .nav-link.active:hover,
+.nav-item .nav-link:focus.active:hover {
   background-color: transparent;
 }
 
@@ -59,29 +59,25 @@
     background-color: transparent;
   }
 
-  .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
   .navbar-brand:focus,
   .navbar-brand:hover {
     color: $theme-secondary;
   }
 
-  .nav-link {
+  .nav-item .nav-link {
     padding: 0.5rem 1rem;
   }
 
-  .nav-link,
-  .nav-link:focus {
+  .nav-item .nav-link,
+  .nav-item .nav-link:focus {
     color: rgba(255, 255, 255, 0.7);
   }
 
-  .nav-link:hover {
+  .nav-item .nav-link:hover {
     color: $theme-secondary;
   }
 
-  .nav-link:focus:hover {
+  .nav-item .nav-link:focus:hover {
     color: $theme-secondary;
   }
 
