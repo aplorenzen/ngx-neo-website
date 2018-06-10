@@ -68,6 +68,10 @@
     color: $theme-secondary;
   }
 
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }
+
   .nav-link,
   .nav-link:focus {
     color: rgba(255, 255, 255, 0.7);
@@ -75,10 +79,6 @@
 
   .nav-link:hover {
     color: $theme-secondary;
-  }
-
-  .nav-link {
-    padding: 0.5rem 1rem;
   }
 
   .nav-link:focus:hover {
