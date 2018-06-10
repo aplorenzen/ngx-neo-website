@@ -4,7 +4,7 @@
   cursor: pointer;
 }
 
-.nav-link.dropdown-toggle {
+.dropdown-item {
   cursor: pointer;
 }
 
@@ -14,48 +14,43 @@
   font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
-.neo-navbar-menu {
-  display: block;
-  margin-top: 4px;
+.navbar-brand {
+  font-weight: 700;
+  color: $theme-primary;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .dropdown-menu {
   margin-bottom: 6px;
 }
 
-.neo-navbar .navbar-brand {
-  font-weight: 700;
-  color: $theme-primary;
-  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-}
-
-.neo-navbar .navbar-brand:focus,
-.neo-navbar .navbar-brand:hover {
-  color: $theme-primary;
-}
-
-.nav-item > .nav-link,
-.nav-item > .nav-link:focus {
+.nav-link,
+.nav-link:focus {
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: $theme-dark;
 }
 
-.nav-item > .nav-link:hover,
-.nav-item > .nav-link:focus:hover {
+.nav-link:hover,
+.nav-link:focus:hover {
   color: $theme-primary;
 }
 
-.nav-item > .nav-link.active,
-.nav-item > .nav-link:focus.active {
+.nav-link.active,
+.nav-link:focus.active {
   color: $theme-primary;
   background-color: transparent;
 }
 
-.nav-item > .nav-link.active:hover,
-.nav-item > .nav-link:focus.active:hover {
+.nav-link.active:hover,
+.nav-link:focus.active:hover {
   background-color: transparent;
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+  color: $theme-primary;
 }
 
 @media (min-width: 576px) {
@@ -64,7 +59,7 @@
     background-color: transparent;
   }
 
-  .neo-navbar .navbar-brand {
+  .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
   }
 
@@ -73,44 +68,48 @@
     color: $theme-secondary;
   }
 
-  .nav-item > .nav-link,
-  .nav-item > .nav-link:focus {
+  .nav-link,
+  .nav-link:focus {
     color: rgba(255, 255, 255, 0.7);
   }
 
-  .nav-item > .nav-link:hover {
+  .nav-link:hover {
     color: $theme-secondary;
   }
 
-  .neo-navbar-nav > .nav-item > .nav-link {
+  .nav-link {
     padding: 0.5rem 1rem;
   }
 
-  .nav-item > .nav-link:focus:hover {
+  .nav-link:focus:hover {
     color: $theme-secondary;
   }
 
-  .neo-navbar.navbar-shrink {
+  .neo-navbar-collapse {
+    margin-top: 4px;
+  }
+
+  .navbar-shrink {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);
     background-color: $theme-secondary;
   }
 
-  .neo-navbar.navbar-shrink .navbar-brand {
+  .navbar-shrink .navbar-brand {
     color: $theme-primary;
   }
 
-  .neo-navbar.navbar-shrink .navbar-brand:focus,
-  .neo-navbar.navbar-shrink .navbar-brand:hover {
+  .navbar-shrink .navbar-brand:focus,
+  .navbar-shrink .navbar-brand:hover {
     color: $theme-primary;
   }
 
-  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link,
-  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:focus {
+  .navbar-shrink .neo-navbar-nav > .nav-item > .nav-link,
+  .navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:focus {
     color: $theme-dark;
   }
 
-  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:hover,
-  .neo-navbar.navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:focus:hover {
+  .navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:hover,
+  .navbar-shrink .neo-navbar-nav > .nav-item > .nav-link:focus:hover {
     color: $theme-primary;
   }
 }
