@@ -8,6 +8,8 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { Logger, I18nService } from '@app/core';
 
+import * as $ from 'jquery';
+
 const log = new Logger('App');
 
 @Component({
