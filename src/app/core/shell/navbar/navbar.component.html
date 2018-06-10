@@ -2,29 +2,29 @@
      appScrollClass
      cssClass="navbar-shrink"
      appScrollOffset="100">
-  <a class="navbar-brand" title="neoprime.it" [ngx-scroll-to]="'#pagetop'" (click)="isCollapsed = false"
+  <a class="navbar-brand" title="neoprime.it" [ngx-scroll-to]="'#pagetop'" data-toggle="collapse" data-target=".collapse.show"
      [routerLink]="['/home']"
      translate>application.name</a>
   <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
-          aria-label="Toggle navigation" data-toggle="collapse" data-target="#collapse-element" (click)="isCollapsed = !isCollapsed">
+          aria-label="Toggle navigation" data-toggle="collapse" data-target="#collapse-element">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse neo-navbar-collapse" id="collapse-element">
+  <div #navigation id="collapse-element" class="collapse navbar-collapse neo-navbar-collapse">
     <div class="navbar-nav neo-navbar-nav">
       <div class="nav-item">
-        <a class="nav-link text-uppercase" title="Profile, Andreas Lorenzen" (click)="isCollapsed = false"
+        <a class="nav-link text-uppercase" title="Profile, Andreas Lorenzen" data-toggle="collapse" data-target=".collapse.show"
            [ngx-scroll-to]="'#profile'" [routerLink]="['/home']">
           <span translate>Profile</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" title="Key Skills, Andreas Lorenzen" (click)="isCollapsed = false"
+        <a class="nav-link text-uppercase" title="Key Skills, Andreas Lorenzen" data-toggle="collapse" data-target=".collapse.show"
            [ngx-scroll-to]="'#skills'" [routerLink]="['/home']">
           <span translate>Key Skills</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" title="Contact, Andreas Lorenzen" (click)="isCollapsed = false"
+        <a class="nav-link text-uppercase" title="Contact, Andreas Lorenzen" data-toggle="collapse" data-target=".collapse.show"
            [ngx-scroll-to]="'#contact'" [routerLink]="['/home']">
           <span translate>Contact</span>
         </a>
@@ -35,7 +35,7 @@
         <a id="language-dropdown" class="nav-link" title="Language" ngbDropdownToggle>{{currentLanguage}}</a>
         <div ngbDropdownMenu aria-labelledby="language-dropdown">
           <button class="dropdown-item" *ngFor="let language of languages"
-                  (click)="setLanguage(language); isCollapsed = false">
+                  (click)="setLanguage(language)" data-toggle="collapse" data-target=".collapse.show">
             {{language}}
           </button>
         </div>
