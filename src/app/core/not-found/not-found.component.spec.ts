@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 import { NotFoundComponent } from './not-found.component';
-import {SeoService} from '@app/core/seo.service';
+import { SeoService } from '@app/core/seo.service';
 
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
@@ -13,7 +14,11 @@ describe('NotFoundComponent', () => {
         NotFoundComponent
       ],
       providers: [
-        SeoService
+        SeoService,
+        Location,
+        LocationStrategy,
+        { provide: LocationStrategy, useClass: PathLocationStrategy },
+        { provide: APP_BASE_HREF, useValue: '/my/app'}
       ]
     })
     .compileComponents();

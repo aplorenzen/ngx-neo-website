@@ -1,11 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { Location } from '@angular/common';
 
 import { SeoService } from './seo.service';
 
 describe('SeoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SeoService]
+      providers: [
+        SeoService,
+        { provide: Location }
+      ]
     });
   });
 

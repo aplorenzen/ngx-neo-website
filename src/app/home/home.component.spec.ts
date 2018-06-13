@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -36,7 +37,11 @@ describe('HomeComponent', () => {
       providers: [
         ScrollToService,
         QuoteService,
-        SeoService
+        SeoService,
+        Location,
+        LocationStrategy,
+        { provide: LocationStrategy, useClass: PathLocationStrategy },
+        { provide: APP_BASE_HREF, useValue: '/my/app'}
       ]
     })
     .compileComponents();
