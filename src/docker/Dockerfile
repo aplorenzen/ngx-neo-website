@@ -57,9 +57,20 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
         RewriteRule ^ - [L]\n\
     \n\
-    CacheHeader on\n\
-    \n\
     ErrorDocument 404 /404/index.html\n' \
+  /usr/local/apache2/conf/httpd.conf
+
+# Insert a Location block in the end of the config, to set up server side caching (for SEO)
+RUN sed -i -e '\$a\n\
+<Location />\n\
+    CacheEnable disk\n\
+    CacheHeader on\n\
+    CacheDefaultExpire 800\n\
+    CacheMaxExpire 64000\n\
+    CacheIgnoreNoLastMod On\n\
+    ExpiresActive on\n\
+    ExpiresDefault A300\n\
+</Location>' \
   /usr/local/apache2/conf/httpd.conf
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
