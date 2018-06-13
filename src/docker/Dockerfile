@@ -23,6 +23,11 @@ RUN sed -i \
   's/#LoadModule expires_module modules\/mod_expires.so/LoadModule expires_module modules\/mod_expires.so/g' \
   /usr/local/apache2/conf/httpd.conf
 
+# Enable the file cache module in apache2, for client side caching
+RUN sed -i \
+  's/#LoadModule file_cache_module modules\/mod_file_cache.so/LoadModule file_cache_module modules\/mod_file_cache.so/g' \
+  /usr/local/apache2/conf/httpd.conf
+
 # Append to the published directory, that we want to rewrite any request that is not an actual file
 # to the index.html page.
 RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was written from the Dockerfile when building the image ###\n\
@@ -46,6 +51,8 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]\n\
         RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d\n\
         RewriteRule ^ - [L]\n\
+    \n\
+    CacheFile /usr/local/apache2/htdocs/index.html\n\
     ErrorDocument 404 /404/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
