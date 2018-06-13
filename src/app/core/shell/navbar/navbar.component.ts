@@ -1,6 +1,7 @@
-import {Component, ElementRef, HostListener, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 import { I18nService } from '../../i18n.service';
+
 declare var $: any;
 
 @Component({

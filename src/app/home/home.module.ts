@@ -16,6 +16,7 @@ import { FooterComponent } from '@app/home/footer/footer.component';
 import { SkillsComponent } from '@app/home/skills/skills.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from './home.component';
+import { SeoService } from '@app/core/seo.service';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { HomeComponent } from './home.component';
     HomeComponent
   ],
   providers: [
-    QuoteService
+    QuoteService,
+    SeoService
   ]
 })
 export class HomeModule { }
