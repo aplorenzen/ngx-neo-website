@@ -9,7 +9,7 @@ export class SeoService {
   createLinkForCanonicalURL() {
     const link: HTMLLinkElement = this.rootDoc.createElement('link');
     link.setAttribute('rel', 'canonical');
-    this.rootDoc.head.appendChild(link);
     link.setAttribute('href', this.rootDoc.URL);
+    this.rootDoc.head.appendChild(link);
   }
 }
