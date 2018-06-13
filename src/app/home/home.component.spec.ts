@@ -12,6 +12,7 @@ import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from './home.component';
 import { ChuckComponent } from '@app/home/chuck/chuck.component';
 import { QuoteService } from '@app/home/quote.service';
+import { SeoService } from '@app/core/seo.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -34,7 +35,8 @@ describe('HomeComponent', () => {
       ],
       providers: [
         ScrollToService,
-        QuoteService
+        QuoteService,
+        SeoService
       ]
     })
     .compileComponents();
