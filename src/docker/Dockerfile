@@ -61,8 +61,7 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
   /usr/local/apache2/conf/httpd.conf
 
 # Insert a Location block in the end of the config, to set up server side caching (for SEO)
-RUN sed -i '$a\n\
-<Location />\n\
+RUN sed -i '$a<Location />\n\
     CacheEnable disk\n\
     CacheHeader on\n\
     CacheDefaultExpire 800\n\
