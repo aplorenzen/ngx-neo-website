@@ -30,7 +30,7 @@ RUN sed -i \
 
 # Enable the file cache module in apache2, for client side caching
 RUN sed -i \
-  's/#LoadModule cache_disk_module modules\/mod_cache_disk.so/LoadModule cache_disk_module modules\/mod_cache_disk.so/g' \
+  's/#LoadModule file_cache_module modules/mod_file_cache.so/LoadModule file_cache_module modules/mod_file_cache.so/g' \
   /usr/local/apache2/conf/httpd.conf
 
 # Append to the published directory, that we want to rewrite any request that is not an actual file
@@ -60,16 +60,7 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
     ErrorDocument 404 /404/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
-# Insert a Location block in the end of the config, to set up server side caching (for SEO)
-RUN sed -i '$a<Location />\n\
-    CacheEnable disk\n\
-    CacheHeader on\n\
-    CacheDefaultExpire 800\n\
-    CacheMaxExpire 64000\n\
-    CacheIgnoreNoLastMod On\n\
-    ExpiresActive on\n\
-    ExpiresDefault A300\n\
-</Location>' \
+RUN sed -i '$aMMapFile /usr/local/apache2/htdocs/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
