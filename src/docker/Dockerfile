@@ -69,7 +69,7 @@ RUN sed -i '$aMMapFile /usr/local/apache2/htdocs/index.html /usr/local/apache2/h
 CacheRoot /var/cache/httpd\n\
 CacheDirLevels 2\n\
 CacheDirLength 1\n\
-<Location "/">\n\
+<Location />\n\
     CacheEnable disk\n\
     CacheHeader on\n\
     CacheDetailHeader on\n\
