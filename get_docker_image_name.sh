@@ -12,7 +12,8 @@ PACKAGE_VERSION=$(cat package.json \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[ ",]//g' \
-  | sed 's/\r//g')
+  | sed 's/\r//g' \
+  | sed 's/\//-/g')
 
 # Get the module name from the package.json, and clean the string
 PROJECT_NAME=$(cat package.json \
