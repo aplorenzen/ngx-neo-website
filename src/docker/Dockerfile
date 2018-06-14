@@ -69,6 +69,7 @@ RUN sed -i '$aMMapFile /usr/local/apache2/htdocs/index.html /usr/local/apache2/h
 CacheRoot /var/cache/httpd\n\
 CacheDirLevels 2\n\
 CacheDirLength 1\n\
+CacheQuickHandler off\n\
 <Location />\n\
     CacheEnable disk\n\
     CacheHeader on\n\
@@ -81,6 +82,7 @@ CacheDirLength 1\n\
 
 RUN mkdir /var/cache/httpd
 RUN chown -R root:daemon /var/cache/httpd
+RUN chmod -R 775 /var/cache/httpd
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
 # Angular will handle all routing
