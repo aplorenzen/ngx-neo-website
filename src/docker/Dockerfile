@@ -60,7 +60,7 @@ RUN sed -i '/<Directory "\/usr\/local\/apache2\/htdocs">/a### Rewrite rule was w
     ErrorDocument 404 /404/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
-RUN sed -i '$aMMapFile /usr/local/apache2/htdocs/index.html\n' \
+RUN sed -i '$aMMapFile /usr/local/apache2/htdocs/index.html /usr/local/apache2/htdocs/home/index.html\n' \
   /usr/local/apache2/conf/httpd.conf
 
 # Comment out the default config that handles requests to /.htaccess and /.ht* with a special error message,
