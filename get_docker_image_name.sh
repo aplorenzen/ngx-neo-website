@@ -4,7 +4,8 @@
 
 # Grab the git branch name
 BRANCH_NAME=$(git show -s --pretty=%d HEAD | grep -Po "/\K[^.*)]*" \
-  | sed 's/\r//g')
+  | sed 's/\r//g' \
+  | sed 's/\//-/g')
 
 # Version key/value should be on its own line, cleaning the string
 PACKAGE_VERSION=$(cat package.json \
@@ -12,8 +13,7 @@ PACKAGE_VERSION=$(cat package.json \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[ ",]//g' \
-  | sed 's/\r//g' \
-  | sed 's/\//-/g')
+  | sed 's/\r//g')
 
 # Get the module name from the package.json, and clean the string
 PROJECT_NAME=$(cat package.json \
