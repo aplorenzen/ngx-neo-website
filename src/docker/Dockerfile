@@ -30,7 +30,7 @@ RUN sed -i \
 
 # Enable the file cache module in apache2, for client side caching
 RUN sed -i \
-  's/#LoadModule file_cache_module modules/mod_file_cache.so/LoadModule file_cache_module modules/mod_file_cache.so/g' \
+  's/#LoadModule file_cache_module modules\/mod_file_cache.so/LoadModule file_cache_module modules\/mod_file_cache.so/g' \
   /usr/local/apache2/conf/httpd.conf
 
 # Append to the published directory, that we want to rewrite any request that is not an actual file
