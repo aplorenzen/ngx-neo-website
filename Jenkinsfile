@@ -5,7 +5,7 @@ node {
 
   checkout scm
 
-  String buildDockerfile = 'src/docker/chrome-test.Dockerfile'
+  String buildDockerfile = 'src/docker/builder.Dockerfile'
   def buildImage
 
   /* Local varables for holding the docker image and the image name */
@@ -68,6 +68,11 @@ node {
          reportFiles: 'index.html',
          reportName: 'Test Coverage Report',
          reportTitles: ''])
+    },
+    'Lint': {
+      buildImage.inside {
+        sh 'npm run lint'
+      }
     }
   }
 

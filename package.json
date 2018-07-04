@@ -17,7 +17,7 @@
     "compile_ng-scrollreveal": "./node_modules/.bin/babel node_modules/ng-scrollreveal -d node_modules/ng-scrollreveal --presets es2015",
     "jenkins:buildinfo": "node replace.buildinfo.js",
     "start": "npm run env -s && ng serve --aot --proxy-config proxy.conf.js",
-    "lint": "ng lint --type-check && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
+    "lint": "ng lint neo-website --type-check && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
     "test": "ng test",
     "test:ci": "npm run lint -s && ng test --single-run --code-coverage",
     "e2e": "npm run env -s && ng e2e",
