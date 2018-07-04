@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
-import { AppPrerenderModuleNgFactory } from './dist-prerender/main.bundle';
+import { AppPrerenderModuleNgFactory } from './dist-prerender/main';
 
 const distFolder = './dist';
 const index = fs

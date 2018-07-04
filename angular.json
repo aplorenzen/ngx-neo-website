@@ -122,6 +122,17 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "pre-render": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "main": "src/main.prerender.ts",
+            "outputPath": "dist-prerender",
+            "sourceMap": false,
+            "optimization": true,
+            "outputHashing": "none",
+            "tsConfig": "src/tsconfig.prerender.json"
+          }
         }
       }
     },
@@ -162,3 +173,4 @@
     }
   }
 }
+
