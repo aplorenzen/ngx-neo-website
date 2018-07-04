@@ -51,7 +51,7 @@ export class I18nService {
       .subscribe((event: LangChangeEvent) => {
         /* Avoid access to localStorage when rendering with SSR - need to refator to use an abstraction of localStorage
         instead. */
-        if (!isPlatformBrowser(this.platformId)) {
+        if (isPlatformBrowser(this.platformId)) {
           localStorage.setItem(languageKey, event.lang);
         }
       });
