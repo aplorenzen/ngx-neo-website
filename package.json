@@ -8,11 +8,11 @@
   },
   "scripts": {
     "ng": "ng",
-    "build": "npm run env -s && ng build --prod && ng build --prod --app neo-website-prerender --output-hashing=none",
+    "build": "npm run env -s && ng build --prod && ng run neo-website:pre-render",
     "postbuild": "npm run render",
     "postinstall": "npm run compile_ng-bootstrap && npm run compile_ng-scrollreveal",
     "render": "ts-node prerender.ts",
-    "build:ci": "npm run env -s && ng build --prod --build-optimizer --vendor-chunk && ng build --prod --app neo-website-prerender --output-hashing=none && npm run postbuild",
+    "build:ci": "npm run env -s && ng build --prod --build-optimizer --vendor-chunk && ng run neo-website:pre-render && npm run postbuild",
     "compile_ng-bootstrap": "./node_modules/.bin/babel node_modules/@ng-bootstrap/ng-bootstrap -d node_modules/@ng-bootstrap/ng-bootstrap --presets es2015",
     "compile_ng-scrollreveal": "./node_modules/.bin/babel node_modules/ng-scrollreveal -d node_modules/ng-scrollreveal --presets es2015",
     "jenkins:buildinfo": "node replace.buildinfo.js",

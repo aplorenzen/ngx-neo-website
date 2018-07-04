@@ -35,7 +35,9 @@ function renderToHtml(url: string, folderPath: string): void {
   }).then(html => {
     // create the route directory
     if (url !== '/index.html') {
-      fs.mkdirSync(folderPath);
+      if (!fs.existsSync(folderPath)){
+        fs.mkdirSync(folderPath);
+      }
     }
     fs.writeFile(folderPath + '/index.html', html,  (err =>  {
       if (err) {
