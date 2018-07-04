@@ -18,7 +18,7 @@ describe('NotFoundComponent', () => {
         Location,
         LocationStrategy,
         { provide: LocationStrategy, useClass: PathLocationStrategy },
-        { provide: APP_BASE_HREF, useValue: '/my/app'}
+        { provide: APP_BASE_HREF, useValue: '/'}
       ]
     })
     .compileComponents();

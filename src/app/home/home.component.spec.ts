@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -24,7 +25,8 @@ describe('HomeComponent', () => {
       imports: [
         CoreModule,
         SharedModule,
-        ScrollToModule
+        ScrollToModule,
+        TranslateModule
       ],
       declarations: [
         HomeComponent,
@@ -41,7 +43,7 @@ describe('HomeComponent', () => {
         Location,
         LocationStrategy,
         { provide: LocationStrategy, useClass: PathLocationStrategy },
-        { provide: APP_BASE_HREF, useValue: '/my/app'}
+        { provide: APP_BASE_HREF, useValue: '/'}
       ]
     })
     .compileComponents();
