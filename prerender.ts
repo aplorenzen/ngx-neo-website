@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
-import { AppPrerenderModuleNgFactory } from './dist-prerender/main.bundle';
+import { AppPrerenderModuleNgFactory } from './dist-prerender/main';
 
 const distFolder = './dist';
 const index = fs
@@ -35,7 +35,9 @@ function renderToHtml(url: string, folderPath: string): void {
   }).then(html => {
     // create the route directory
     if (url !== '/index.html') {
-      fs.mkdirSync(folderPath);
+      if (!fs.existsSync(folderPath)){
+        fs.mkdirSync(folderPath);
+      }
     }
     fs.writeFile(folderPath + '/index.html', html,  (err =>  {
       if (err) {
