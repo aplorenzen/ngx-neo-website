@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -26,7 +26,12 @@ describe('HomeComponent', () => {
         CoreModule,
         SharedModule,
         ScrollToModule,
-        TranslateModule
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader
+          }
+        })
       ],
       declarations: [
         HomeComponent,
@@ -38,6 +43,7 @@ describe('HomeComponent', () => {
       ],
       providers: [
         ScrollToService,
+        TranslateService,
         QuoteService,
         SeoService,
         Location,
