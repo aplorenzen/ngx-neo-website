@@ -5,7 +5,7 @@
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="section-heading">{{ "footer.title" | translate }}</h2>
         <hr class="hr-light"/>
-        <div class="footer-email">
+        <div *ngIf="isBrowser()" class="footer-email">
           <a href="mailto:andreas@neoprime.it" title="E-mail, Andreas Lorenzen">andreas@neoprime.it</a>
         </div>
 

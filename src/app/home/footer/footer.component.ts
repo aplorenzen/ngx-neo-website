@@ -1,3 +1,5 @@
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, PLATFORM_ID } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import {environment} from '@env/environment';
 
@@ -8,7 +10,7 @@ import {environment} from '@env/environment';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   buildId = environment.buildId;
   gitUrl = environment.gitUrl;
@@ -18,4 +20,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
+  }
 }

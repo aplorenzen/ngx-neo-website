@@ -1,10 +1,9 @@
-import { Inject, PLATFORM_ID } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { includes } from 'lodash';
-import { isPlatformBrowser } from '@angular/common';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
+import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
+import {includes} from 'lodash';
+import {isPlatformBrowser} from '@angular/common';
 
-import { Logger } from './logger.service';
+import {Logger} from './logger.service';
 import * as enUS from '../../translations/en-US.json';
 import * as daDK from '../../translations/da-DK.json';
 
