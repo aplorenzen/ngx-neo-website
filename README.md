@@ -1,5 +1,12 @@
 # ngx-neo-website
 
+This project is my personal "resume style" website.  
+
+[neoprime.it](https://neoprime.it)
+
+
+
+
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 4.0.0
 

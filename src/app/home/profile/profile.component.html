@@ -2,15 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <h2 class="section-heading text-white" translate>Profile</h2>
+        <h2 class="section-heading text-white">{{ "profile.header" | translate}}</h2>
         <hr class="hr-light my-4"/>
         <img class="profile-image" src="assets/profile_placeholder-min.png" alt="Profile Image" title="Profile Image"/>
-        <p class="text-faded mb-4" translate>Hi! My name is Andreas. I am a software engineer, and you have arrived at my online resume. This site is all about me in my professional context. You have been warned.<span> 🙂</span></p>
-        <p class="text-faded mb-4"><strong>TL;DR </strong><span translate>here is, that I am full stack developer, that loves geeking out over build, test and deployment automation.</span></p>
-        <p class="text-faded mb-4">
-          <span translate>Currently I am operating at full time as Lead Developer at </span><a href="https://www.netcompany.com/" title="Netcompany Website">Netcompany</a><span translate>. Which is working out pretty great for me, since I get to dive into a lot of interesting technology, work with some  and work on  advancing a setup .. MORE...</span>
-        </p>
-        <a class="btn btn-light btn-xl text-uppercase" title="Key Skills" [ngx-scroll-to]="'#skills'" translate>Key Skills</a>
+        <p class="text-faded mb-4">{{ "profile.body.intro" | translate}}</p>
+        <p class="text-faded mb-4" [innerHTML]="'profile.body.tldr' | translate"></p>
+        <p class="text-faded mb-4" [innerHTML]="'profile.body.paragraph1' | translate"></p>
+        <p class="text-faded mb-4">{{ "profile.body.paragraph2" | translate}}</p>
+        <p class="text-faded mb-4">{{ "profile.body.paragraph3" | translate}}</p>
+        <p class="text-faded mb-4">{{ "profile.body.paragraph4" | translate}}</p>
+        <a class="btn btn-light btn-xl text-uppercase" title="Key Skills" [ngx-scroll-to]="'#skills'">{{ "profile.link.skills" | translate }}</a>
       </div>
     </div>
   </div>
