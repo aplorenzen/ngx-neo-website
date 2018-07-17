@@ -77,12 +77,20 @@ RUN sed -i '$a<Location />\n\
 RUN sed -i '/<Files "\.ht\*">/,/<\/Files>/c# This was commented out from the Dockerfile\n# <Files ".ht*">\n#     Require all denied\n# <\/Files>' \
   /usr/local/apache2/conf/httpd.conf
 
+# Replace the default ServerAdmin entry, with one for this site
+RUN sed -i \
+  's/ServerAdmin you@example.com/ServerAdmin andreas@neoprime.it/g' \
+  /usr/local/apache2/conf/httpd.conf
+
+# Enable the ServerName config, and set it to the target host
+# TODO: This should be altered for continious deployment for all brances, so that the hostname is set from the same
+# target that the CD system will use
+RUN sed -i \
+  's/#ServerName www.example.com:80/ServerName neoprime.it:80/g' \
+  /usr/local/apache2/conf/httpd.conf
+
 # Define a healthcheck that tests the root URL of the site
 HEALTHCHECK --interval=5s --timeout=3s CMD curl --fail http://localhost:80/ || exit 1
-
-# TODO: Replace in httpd.conf
-# ServerAdmin you@example.com
-# #ServerName www.example.com:80
 
 # Copy all the files from the docker build context into the public htdocs of the apache container.
 COPY ./ /usr/local/apache2/htdocs/
