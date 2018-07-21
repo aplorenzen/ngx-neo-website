@@ -20,6 +20,7 @@ import { HomeComponent } from './home.component';
 import { SeoService } from '@app/core/seo.service';
 import { AllSkillsComponent } from './all-skills/all-skills.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BarRatingModule} from 'ngx-bar-rating';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgsRevealModule,
     ScrollToModule,
     BrowserAnimationsModule,
-    CollapsibleModule
+    CollapsibleModule,
+    BarRatingModule
   ],
   declarations: [
     ChuckComponent,
