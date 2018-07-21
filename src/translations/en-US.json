@@ -64,5 +64,16 @@
       "home": "Home"
     }
   },
+ "all-skills": {
+   "title": "All Skills",
+   "intro": "The following is a more extensive list of all my relevant skills",
+   "languages": {
+     "heading": "Languages",
+     "intro": "This section lists languages that I am familiar with",
+     "java": {
+       "title": "Java"
+     }
+   }
+ },
   "Since": "Since"
 }

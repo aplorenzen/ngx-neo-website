@@ -154,6 +154,9 @@ Development, build and quality processes are based on [angular-cli](https://gith
 
 TODO: Add all dependencies since 'ngx-rocket new'
 
+* materialize-css
+* angular2-collapsible
+
 # Docker
 
 Going to use the httpd (Apache) image to host the production application.
