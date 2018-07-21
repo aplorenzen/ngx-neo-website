@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgsRevealModule } from 'ng-scrollreveal';
+import { CollapsibleModule } from 'angular2-collapsible';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -18,6 +19,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from './home.component';
 import { SeoService } from '@app/core/seo.service';
 import { AllSkillsComponent } from './all-skills/all-skills.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { AllSkillsComponent } from './all-skills/all-skills.component';
     SharedModule,
     HomeRoutingModule,
     NgsRevealModule,
-    ScrollToModule
+    ScrollToModule,
+    BrowserAnimationsModule,
+    CollapsibleModule
   ],
   declarations: [
     ChuckComponent,

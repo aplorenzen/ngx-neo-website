@@ -1,15 +1,57 @@
-<section class="bg-primary" id="all-skills">
+<section class="bg-secondary" id="all-skills">
 
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">{{ "all-skills.title" | translate }}</h2>
-        <hr class="hr-light"/>
+        <hr class="hr-dark"/>
         <p class="text-muted mb-4">{{ "all-skills.intro" | translate }}</p>
       </div>
     </div>
   </div>
 
   <div class="container">
+    <h3 class="skill-heading">{{ "all-skills.languages.heading" | translate }}</h3>
+    <p class="text-muted mb-4">{{ "all-skills.languages.intro" | translate }}</p>
+
+    <collapsible-table class="all-skills-table" [type]="'accordion'" [borderedHorizontally]="true" [highlight]="true">
+
+      <thead>
+      <collapsible-table-row>
+        <th>Language</th>
+        <th class="rating-column">Rating</th>
+      </collapsible-table-row>
+      </thead>
+
+      <tbody>
+      <collapsible-table-row [detail]="detail_java">
+        <td>
+          <img class="all-skill-image" src="assets/logo_java_96.svg" alt="Docker" title="Docker Logo"/>
+          <span>{{ "all-skills.languages.java.title" | translate }}</span></td>
+        <td class="rating-column">
+          <ngb-rating rate="8" [readonly]="true"></ngb-rating>
+        </td>
+      </collapsible-table-row>
+      <collapsible-table-row-detail #detail_java>
+        <table>
+          <tr>
+            <td width="75%">Row #1 Detail #1</td>
+            <td>Row #1 Detail #2</td>
+          </tr>
+        </table>
+      </collapsible-table-row-detail>
+
+      <collapsible-table-row [detail]="detail2">
+        <td>Cell(1,1)</td>
+        <td class="rating-column">Cell(1,2)</td>
+      </collapsible-table-row>
+      <collapsible-table-row-detail #detail2>
+        <p>Row #2 Detail</p>
+      </collapsible-table-row-detail>
+
+      </tbody>
+
+    </collapsible-table>
+
   </div>
 </section>
