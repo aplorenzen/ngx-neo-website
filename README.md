@@ -156,6 +156,7 @@ TODO: Add all dependencies since 'ngx-rocket new'
 
 * materialize-css
 * angular2-collapsible
+* ngx-bar-rating - https://github.com/MurhafSousli/ngx-bar-rating
 
 # Docker
 

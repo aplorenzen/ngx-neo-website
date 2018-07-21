@@ -51,6 +51,7 @@
     "lodash": "^4.17.4",
     "materialize-css": "^0.100.2",
     "ng-scrollreveal": "^2.2.0",
+    "ngx-bar-rating": "^1.1.0",
     "popper.js": "^1.14.3",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
