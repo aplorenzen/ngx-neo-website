@@ -17,6 +17,7 @@ import { KeySkillsComponent } from '@app/home/key-skills/key-skills.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from './home.component';
 import { SeoService } from '@app/core/seo.service';
+import { AllSkillsComponent } from './all-skills/all-skills.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { SeoService } from '@app/core/seo.service';
     ProfileComponent,
     KeySkillsComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AllSkillsComponent
   ],
   providers: [
     QuoteService,
