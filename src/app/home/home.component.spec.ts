@@ -7,7 +7,7 @@ import { SharedModule } from '@app/shared';
 
 import { BannerComponent } from '@app/home/banner/banner.component';
 import { ProfileComponent } from '@app/home/profile/profile.component';
-import { SkillsComponent } from '@app/home/skills/skills.component';
+import { KeySkillsComponent } from '@app/home/key-skills/key-skills.component';
 import { FooterComponent } from '@app/home/footer/footer.component';
 import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
@@ -37,7 +37,7 @@ describe('HomeComponent', () => {
         HomeComponent,
         BannerComponent,
         ProfileComponent,
-        SkillsComponent,
+        KeySkillsComponent,
         ChuckComponent,
         FooterComponent
       ],

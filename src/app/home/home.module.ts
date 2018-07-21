@@ -13,7 +13,7 @@ import { QuoteService } from './quote.service';
 import { BannerComponent } from '@app/home/banner/banner.component';
 import { ProfileComponent } from '@app/home/profile/profile.component';
 import { FooterComponent } from '@app/home/footer/footer.component';
-import { SkillsComponent } from '@app/home/skills/skills.component';
+import { KeySkillsComponent } from '@app/home/key-skills/key-skills.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from './home.component';
 import { SeoService } from '@app/core/seo.service';
@@ -33,7 +33,7 @@ import { SeoService } from '@app/core/seo.service';
     ChuckComponent,
     BannerComponent,
     ProfileComponent,
-    SkillsComponent,
+    KeySkillsComponent,
     FooterComponent,
     HomeComponent
   ],

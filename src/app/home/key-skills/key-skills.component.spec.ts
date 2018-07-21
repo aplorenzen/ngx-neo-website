@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SkillsComponent } from './skills.component';
+import { KeySkillsComponent } from './key-skills.component';
 import {TranslateFakeLoader, TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 
-describe('SkillsComponent', () => {
-  let component: SkillsComponent;
-  let fixture: ComponentFixture<SkillsComponent>;
+describe('KeySkillsComponent', () => {
+  let component: KeySkillsComponent;
+  let fixture: ComponentFixture<KeySkillsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,7 +18,7 @@ describe('SkillsComponent', () => {
         })
       ],
       declarations: [
-        SkillsComponent
+        KeySkillsComponent
       ],
       providers: [
         TranslateService
@@ -28,7 +28,7 @@ describe('SkillsComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SkillsComponent);
+    fixture = TestBed.createComponent(KeySkillsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
