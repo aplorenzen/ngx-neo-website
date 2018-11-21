@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <h2 class="section-heading">{{ "footer.title" | translate }}</h2>
+        <h2 class="section-heading">{{ "default.footer.title" | translate }}</h2>
         <hr class="hr-light"/>
         <div *ngIf="isBrowser()" class="footer-email">
           <a href="mailto:andreas@neoprime.it" title="E-mail, Andreas Lorenzen">andreas@neoprime.it</a>
@@ -28,13 +28,13 @@
     <div class="row">
       <div *ngIf="buildUrl && buildId" class="col text-center footer-link-col">
         <a href="{{buildUrl}}" class="btn btn-success btn-footer-link" role="button" title="Jenkins Build">
-          <img src="assets/logo_jenkins.svg" width="20" height="20" alt="Jenkins" title="Jenkins Build"/><span>{{ "footer.link.jenkins" | translate }}</span> ({{buildId}})
+          <img src="assets/logo_jenkins.svg" width="20" height="20" alt="Jenkins" title="Jenkins Build"/><span>{{ "default.footer.link.jenkins" | translate }}</span> ({{buildId}})
         </a>
       </div>
       <div class="col text-center footer-link-col">
         <a href="{{gitUrl}}" class="btn btn-info btn-footer-link" role="button" title="Github Repository">
           <img src="assets/logo_github_2.svg" width="20" height="20" alt="Github Repository" title="Github Repository"/>
-          <span>{{ "footer.link.github" | translate }}</span></a>
+          <span>{{ "default.footer.link.github" | translate }}</span></a>
       </div>
     </div>
   </div>
