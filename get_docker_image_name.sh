@@ -3,8 +3,9 @@
 # TODO: Update the script so that it takes care of all the failure scenarios, and informs and helps the user
 
 # Grab the git branch name
-BRANCH_NAME=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,' \
+BRANCH_NAME=$(git show -s --pretty=%d HEAD | grep -Po "/\K[^.*)]*" \
   | sed 's/\r//g' \
+  | sed 's/,//g' \
   | sed 's/\//-/g')
 
 # Version key/value should be on its own line, cleaning the string
@@ -57,4 +58,4 @@ if [ -n "$ENVIRONMENT" ]; then
   IMAGE_NAME="$IMAGE_NAME-$ENVIRONMENT";
 fi
 
-echo "${IMAGE_NAME}"
+printf ${IMAGE_NAME}
