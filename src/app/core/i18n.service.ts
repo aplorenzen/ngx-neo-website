@@ -4,8 +4,8 @@ import {includes} from 'lodash';
 import {isPlatformBrowser} from '@angular/common';
 
 import {Logger} from './logger.service';
-import * as enUS from '../../translations/en-US.json';
-import * as daDK from '../../translations/da-DK.json';
+import enUS from '../../translations/en-US.json';
+import daDK from '../../translations/da-DK.json';
 
 const log = new Logger('I18nService');
 const languageKey = 'language';

@@ -35,7 +35,7 @@ function renderToHtml(url: string, folderPath: string): void {
   }).then(html => {
     // create the route directory
     if (url !== '/index.html') {
-      if (!fs.existsSync(folderPath)){
+      if (!fs.existsSync(folderPath)) {
         fs.mkdirSync(folderPath);
       }
     }
@@ -43,7 +43,7 @@ function renderToHtml(url: string, folderPath: string): void {
       if (err) {
         throw err;
       }
-      console.log(`success`);
+      console.log('Prerender: INFO: ' + folderPath + '/index.html rendered successfully');
     }));
   });
 }
