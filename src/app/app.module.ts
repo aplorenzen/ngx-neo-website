@@ -26,7 +26,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot(),
-    NgbModule.forRoot(),
+    NgbModule,
     NgsRevealModule.forRoot(),
     CoreModule,
     SharedModule,
