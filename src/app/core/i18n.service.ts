@@ -31,9 +31,6 @@ export class I18nService {
               with window and localStorage */
               @Inject(PLATFORM_ID) private platformId: Object) {
     // Embed languages to avoid extra HTTP requests
-    console.log(enUS);
-    console.log(daDK);
-
     translateService.setTranslation('English', enUS);
     translateService.setTranslation('Dansk', daDK);
   }
