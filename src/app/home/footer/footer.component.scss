@@ -18,11 +18,11 @@
 .btn-footer-link {
   margin: 6px;
   padding-right: 30px;
+  white-space: initial;
 }
 
 .footer-link-col {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 6px;
 }
 
 .footer-link-col img {
@@ -34,4 +34,10 @@
 .footer-link-col a:link,
 .footer-link-col a:active {
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3rem;
+  }
 }

@@ -16,8 +16,10 @@
           <a href="https://www.linkedin.com/in/andreas-lorenzen" target="_blank" title="Linkedin, Andreas Lorenzen">
             <img src="assets/logo_linkedin.svg" width="48" height="48" alt="Linkedin" title="Linkedin"/>
           </a>
-          <a href="https://stackoverflow.com/users/8346801?tab=profile" target="_blank" title="Stack Overflow, Andreas Lorenzen">
-            <img src="assets/logo_stackoverflow.svg" width="48" height="48" alt="Stack Overflow" title="Stack Overflow"/>
+          <a href="https://stackoverflow.com/users/8346801?tab=profile" target="_blank"
+             title="Stack Overflow, Andreas Lorenzen">
+            <img src="assets/logo_stackoverflow.svg" width="48" height="48" alt="Stack Overflow"
+                 title="Stack Overflow"/>
           </a>
           <a href="https://github.com/aplorenzen" target="_blank" title="Github, Andreas Lorenzen">
             <img src="assets/logo_github_3.svg" width="48" height="48" alt="Github" title="Github"/>
@@ -28,9 +30,12 @@
     <div class="row">
       <div *ngIf="buildUrl && buildId" class="col text-center footer-link-col">
         <a href="{{buildUrl}}" class="btn btn-success btn-footer-link" role="button" title="Jenkins Build">
-          <img src="assets/logo_jenkins.svg" width="20" height="20" alt="Jenkins" title="Jenkins Build"/><span>{{ "footer.link.jenkins" | translate }}</span> ({{buildId}})
+          <img src="assets/logo_jenkins.svg" width="20" height="20" alt="Jenkins" title="Jenkins Build"/><span>{{ "footer.link.jenkins" | translate }}</span>
+          ({{buildId}})
         </a>
       </div>
+    </div>
+    <div class="row">
       <div class="col text-center footer-link-col">
         <a href="{{gitUrl}}" class="btn btn-info btn-footer-link" role="button" title="Github Repository">
           <img src="assets/logo_github_2.svg" width="20" height="20" alt="Github Repository" title="Github Repository"/>
