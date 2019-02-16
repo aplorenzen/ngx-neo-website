@@ -17,10 +17,16 @@
 
 .btn-footer-link {
   margin: 6px;
+  padding-right: 30px;
 }
 
-.footer-link-col > a {
-  margin: 4px;
+.footer-link-col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.footer-link-col img {
+  margin: 6px 10px;
 }
 
 .footer-link-col a:visited,
