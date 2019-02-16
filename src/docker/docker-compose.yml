@@ -15,7 +15,7 @@ services:
     networks:
       - neo-nginx-back
     environment:
-      - VIRTUAL_HOST=neoprime.it,neoprime.dk,neoprime.org
+      - VIRTUAL_HOST=neoprime.it,neoprime.dk,neoprime.org,www.neoprime.it,www.neoprime.dk,www.neoprime.org
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=neoprime.it,neoprime.dk,neoprime.org
+      - LETSENCRYPT_HOST=neoprime.it,neoprime.dk,neoprime.org,www.neoprime.it,www.neoprime.dk,www.neoprime.org
       - LETSENCRYPT_EMAIL=admin@neoprime.it
