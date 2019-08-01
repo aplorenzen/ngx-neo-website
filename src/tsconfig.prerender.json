@@ -8,7 +8,6 @@
     "test.ts",
     "**/*.spec.ts"
   ],
-  /* Additional informations to bootstrap Angular */
   "angularCompilerOptions": {
     "entryModule": "app/app.prerender.module#AppPrerenderModule"
   }
