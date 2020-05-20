@@ -11,7 +11,7 @@ node {
   /* Local varables for holding the docker image and the image name */
   def targetDockerImage
   String targetImageName
-  String targetDockerRegistry = "docker.neoprime.it"
+  String targetDockerRegistry = "https://docker.neoprime.it"
 
   /* Building customer container for building and testing the project */
   stage('Prepare Build Container') {
