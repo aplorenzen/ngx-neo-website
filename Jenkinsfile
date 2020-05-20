@@ -106,7 +106,7 @@ node {
 
   stage('Deploy') {
     // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
-    sh 'export IMAGE_NAME=' + targetImageName + ' && ' + 'docker stack deploy -c src/docker/docker-stack.yml neowebsite'
+    sh 'export IMAGE_NAME=' + targetImageName + ' && ' + 'docker stack deploy --with-registry-auth -c src/docker/docker-stack.yml neowebsite'
   }
 }
 
