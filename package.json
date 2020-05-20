@@ -1,10 +1,11 @@
 {
   "name": "ngx-neo-website",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "private": true,
   "config": {
-    "docker-namespace": "aplorenzen"
+    "docker-namespace": "neo",
+    "docker-registry": "docker.neoprime.it"
   },
   "scripts": {
     "ng": "ng",
