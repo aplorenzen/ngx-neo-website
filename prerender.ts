@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
-import { AppPrerenderModuleNgFactory } from './dist-prerender/main.bundle';
+import { AppPrerenderModuleNgFactory } from './dist-prerender/main';
 
 const distFolder = './dist';
 const index = fs
@@ -13,7 +13,10 @@ const index = fs
 // we could automate this based on the app.routes.ts file but
 // to keep it simple let's just create an array with the routes we want
 // to prerender
-const paths = ['/home'];
+const paths = [
+  '/home',
+  '/404'
+];
 
 enableProdMode();
 
@@ -32,13 +35,15 @@ function renderToHtml(url: string, folderPath: string): void {
   }).then(html => {
     // create the route directory
     if (url !== '/index.html') {
-      fs.mkdirSync(folderPath);
+      if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath);
+      }
     }
     fs.writeFile(folderPath + '/index.html', html,  (err =>  {
       if (err) {
         throw err;
       }
-      console.log(`success`);
+      console.log('Prerender: INFO: ' + folderPath + '/index.html rendered successfully');
     }));
   });
 }

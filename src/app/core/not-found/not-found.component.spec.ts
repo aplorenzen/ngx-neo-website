@@ -1,12 +1,13 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {APP_BASE_HREF, Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
-import {BannerComponent} from './banner.component';
-import {ScrollToModule, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
+import {NotFoundComponent} from './not-found.component';
+import {SeoService} from '@app/core/seo.service';
 import {TranslateFakeLoader, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
-describe('BannerComponent', () => {
-  let component: BannerComponent;
-  let fixture: ComponentFixture<BannerComponent>;
+describe('NotFoundComponent', () => {
+  let component: NotFoundComponent;
+  let fixture: ComponentFixture<NotFoundComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,21 +17,24 @@ describe('BannerComponent', () => {
             provide: TranslateLoader,
             useClass: TranslateFakeLoader
           }
-        }),
-        ScrollToModule
+        })
       ],
       declarations: [
-        BannerComponent
+        NotFoundComponent
       ],
       providers: [
-        ScrollToService
+        SeoService,
+        Location,
+        LocationStrategy,
+        {provide: LocationStrategy, useClass: PathLocationStrategy},
+        {provide: APP_BASE_HREF, useValue: '/'}
       ]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BannerComponent);
+    fixture = TestBed.createComponent(NotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

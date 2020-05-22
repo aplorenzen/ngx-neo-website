@@ -1,0 +1,25 @@
+version: "3.2"
+
+networks:
+  traefik-public:
+    external:
+      name: traefik-public
+
+services:  
+  neo-website:
+    image: ${IMAGE_NAME}
+    networks:
+      - traefik-public
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.middlewares.https_redirect.redirectscheme.scheme=https"
+        - "traefik.http.routers.neowebsite_router_http.rule=Host(`neoprime.it`)"
+        - "traefik.http.routers.neowebsite_router_http.entrypoints=http"
+        - "traefik.http.routers.neowebsite_router_http.middlewares=https_redirect"
+        - "traefik.http.routers.neowebsite_router_https.rule=Host(`neoprime.it`)"
+        - "traefik.http.routers.neowebsite_router_https.entrypoints=https"
+        - "traefik.http.routers.neowebsite_router_https.tls=true"
+        - "traefik.http.routers.neowebsite_router_https.tls.certresolver=letsencryptresolver"
+        - "traefik.http.routers.neowebsite_router_https.tls.domains[0].main=neoprime.it"
+        - "traefik.http.services.neowebsite_service.loadbalancer.server.port=80"

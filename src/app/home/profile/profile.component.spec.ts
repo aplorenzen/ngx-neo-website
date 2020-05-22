@@ -1,7 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ProfileComponent } from './profile.component';
-import { ScrollToModule, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
+import {ProfileComponent} from './profile.component';
+import {ScrollToModule, ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
+import {TranslateFakeLoader, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -10,14 +11,20 @@ describe('ProfileComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader
+          }
+        }),
         ScrollToModule
       ],
-      declarations: [ ProfileComponent ],
+      declarations: [ProfileComponent],
       providers: [
         ScrollToService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

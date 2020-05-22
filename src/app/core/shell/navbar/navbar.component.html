@@ -2,35 +2,39 @@
      appScrollClass
      cssClass="navbar-shrink"
      appScrollOffset="100">
-  <a class="navbar-brand" [ngx-scroll-to]="'#pagetop'" (click)="hideMenu()" [routerLink]="['/home']"
-     translate>application.name</a>
+  <a class="navbar-brand" title="neoprime.it" [ngx-scroll-to]="'#pagetop'" data-toggle="collapse" data-target=".collapse.show"
+     [routerLink]="['/home']">{{ "application.name" | translate }}</a>
   <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
-          aria-label="Toggle navigation" (click)="toggleMenu()">
+          aria-label="Toggle navigation" data-toggle="collapse" data-target="#collapse-element">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div id="navbar-menu" class="collapse navbar-collapse neo-navbar-menu" [@slideInOut]="menuState">
+  <div #navigation id="collapse-element" class="collapse navbar-collapse neo-navbar-collapse">
     <div class="navbar-nav neo-navbar-nav">
       <div class="nav-item">
-        <a class="nav-link text-uppercase" (click)="hideMenu()" [ngx-scroll-to]="'#profile'">
-          <span translate>Profile</span>
+        <a class="nav-link text-uppercase" title="Profile, Andreas Lorenzen" data-toggle="collapse" data-target=".collapse.show"
+           [ngx-scroll-to]="'#profile'" [routerLink]="['/home']">
+          <span>{{ "navbar.link.profile" | translate }}</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" (click)="hideMenu()" [ngx-scroll-to]="'#skills'">
-          <span translate>Key Skills</span>
+        <a class="nav-link text-uppercase" title="Key Skills, Andreas Lorenzen" data-toggle="collapse" data-target=".collapse.show"
+           [ngx-scroll-to]="'#skills'" [routerLink]="['/home']">
+          <span>{{ "navbar.link.skills" | translate }}</span>
         </a>
       </div>
       <div class="nav-item">
-        <a class="nav-link text-uppercase" (click)="hideMenu()" [ngx-scroll-to]="'#contact'">
-          <span translate>Contact</span>
+        <a class="nav-link text-uppercase" title="Contact, Andreas Lorenzen" data-toggle="collapse" data-target=".collapse.show"
+           [ngx-scroll-to]="'#contact'" [routerLink]="['/home']">
+          <span>{{ "navbar.link.contact" | translate }}</span>
         </a>
       </div>
     </div>
     <div class="navbar-nav neo-navbar-nav ml-auto">
       <div class="nav-item" ngbDropdown placement="bottom-right">
-        <a id="language-dropdown" class="nav-link" ngbDropdownToggle>{{currentLanguage}}</a>
+        <a id="language-dropdown" class="nav-link" title="Language" ngbDropdownToggle>{{currentLanguage}}</a>
         <div ngbDropdownMenu aria-labelledby="language-dropdown">
-          <button class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
+          <button class="dropdown-item" *ngFor="let language of languages"
+                  (click)="setLanguage(language)" data-toggle="collapse" data-target=".collapse.show">
             {{language}}
           </button>
         </div>

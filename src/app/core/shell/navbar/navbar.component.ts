@@ -1,75 +1,23 @@
-import { Inject, PLATFORM_ID } from '@angular/core';
-import {Component, HostListener, OnInit} from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 import { I18nService } from '../../i18n.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
-  animations: [
-    trigger('slideInOut', [
-      state('in', style({
-        display: 'none',
-        transform: 'translate3d(120%, 0, 0)'
-      })),
-      state('out', style({
-        display: 'block',
-        transform: 'translate3d(0, 0, 0)'
-      })),
-      transition('in => out', animate('200ms ease-in-out')),
-      transition('out => in', animate('200ms ease-in-out'))
-    ]),
-  ]
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  menuState = 'out';
-  mobileView = false;
+  @ViewChild('navigation') navigation: ElementRef;
 
   constructor(private i18nService: I18nService,
-              @Inject(PLATFORM_ID) private platformId: Object) {}
-
-  handleResize() {
-    /* Avoid access to window object when rendering with SSR - need to refator to use an abstraction of window
-    instead. */
-    if (isPlatformBrowser(this.platformId)) {
-      if (window.innerWidth >= 576) {
-        this.menuState = 'out';
-        this.mobileView = false;
-      } else {
-        this.menuState = 'in';
-        this.mobileView = true;
-      }
-    }
-  }
-
-  ngOnInit() {
-    this.handleResize();
-  }
-
-  toggleMenu() {
-    if (this.mobileView) {
-      this.menuState = this.menuState === 'out' ? 'in' : 'out';
-    }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.handleResize();
-  }
-
-  hideMenu() {
-    if (this.mobileView) {
-      this.menuState = 'in';
-    }
-  }
+              private elementRef: ElementRef) {}
 
   setLanguage(language: string) {
     this.i18nService.language = language;
-    this.hideMenu();
   }
 
   get currentLanguage(): string {
@@ -78,5 +26,20 @@ export class NavbarComponent implements OnInit {
 
   get languages(): string[] {
     return this.i18nService.supportedLanguages;
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: any) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      if (this.navigation.nativeElement.classList.contains('show')) {
+        // TODO: Need to clean this up and make it typescript
+        /* From https://stackoverflow.com/questions/30623825/how-to-use-jquery-with-angular?utm_medium=organic&utm_sourc
+        e=google_rich_qa&utm_campaign=google_rich_qa */
+        // console.log('clicked outside');
+        // const collapseElement: HTMLElement = document.getElementById('collapse-element') as HTMLElement;
+        // collapseElement.collapse('hide');
+        $('.navbar-collapse').collapse('hide');
+      }
+    }
   }
 }

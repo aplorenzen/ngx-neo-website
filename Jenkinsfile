@@ -5,13 +5,13 @@ node {
 
   checkout scm
 
-  String buildDockerfile = 'src/docker/chrome-test.Dockerfile'
+  String buildDockerfile = 'src/docker/builder.Dockerfile'
   def buildImage
 
   /* Local varables for holding the docker image and the image name */
   def targetDockerImage
   String targetImageName
-  String targetDockerRegistry
+  String targetDockerRegistry = "https://docker.neoprime.it"
 
   /* Building customer container for building and testing the project */
   stage('Prepare Build Container') {
@@ -35,7 +35,7 @@ node {
 
     /* Set the registry that we will push the built docker image to */
     /* TODO: This should be determined from config in the package.json */
-    targetDockerRegistry = 'https://registry.hub.docker.com'
+    // targetDockerRegistry = 'https://registry.hub.docker.com'
     /* Determine the image name with the helper script */
     targetImageName = sh returnStdout: true, script: './get_docker_image_name.sh'
 
@@ -68,6 +68,11 @@ node {
          reportFiles: 'index.html',
          reportName: 'Test Coverage Report',
          reportTitles: ''])
+    },
+    'Lint': {
+      buildImage.inside {
+        sh 'npm run lint'
+      }
     }
   }
 
@@ -87,21 +92,21 @@ node {
     targetDockerImage = docker.build(targetImageName, "dist/")
   }
 
-//  stage('Push Docker Image') {
-//    /* Push the container to the custom Registry */
-//
-//    /* Finally, we'll push the image with two tags:
-//       * First, the incremental build number from Jenkins
-//       * Second, the 'latest' tag.
-//       * Pushing multiple tags is cheap, as all the layers are reused. */
-//    docker.withRegistry(targetDockerRegistry, 'aplorenzen-dockerhub') {
-//      targetDockerImage.push()
-//    }
-//  }
+ stage('Push Docker Image') {
+   /* Push the container to the custom Registry */
+
+   /* Finally, we'll push the image with two tags:
+      * First, the incremental build number from Jenkins
+      * Second, the 'latest' tag.
+      * Pushing multiple tags is cheap, as all the layers are reused. */
+   docker.withRegistry(targetDockerRegistry, 'docker.neoprime.it') {
+     targetDockerImage.push()
+   }
+ }
 
   stage('Deploy') {
     // sh "docker -H unix:///var/run/docker.sock run --name test_image_web -e DB_URI=123 docker.neoprime.it/neo/neo-website:${env.BUILD_ID}"
-    sh 'export IMAGE_NAME=' + targetImageName + ' && ' + 'docker-compose -f src/docker/docker-compose.yml up -d'
+    sh 'export IMAGE_NAME=' + targetImageName + ' && ' + 'docker stack deploy --with-registry-auth -c src/docker/docker-stack.yml neowebsite'
   }
 }
 

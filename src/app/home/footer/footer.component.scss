@@ -17,6 +17,16 @@
 
 .btn-footer-link {
   margin: 6px;
+  padding-right: 30px;
+  white-space: initial;
+}
+
+.footer-link-col {
+  padding: 6px;
+}
+
+.footer-link-col img {
+  margin: 6px 10px;
 }
 
 .footer-link-col a:visited,
@@ -24,4 +34,10 @@
 .footer-link-col a:link,
 .footer-link-col a:active {
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3rem;
+  }
 }

@@ -1,9 +1,23 @@
 # ngx-neo-website
 
-This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
-version 4.0.0
+This project is my personal "resume style" website. I host it on these locations: [neoprime.it](https://neoprime.it), [neoprime.dk](https://neoprime.dk) and [neoprime.org](https://neoprime.org).
+
+If you are interested in making something similar, feel free to use this project as a template, or to get inspired.
+
+The project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/) version 4.0.0.
+
+# Features
+
+* Onepage personal resume site
+* Docker containerization in httpd
+* Pre-rendering (for SEO)
+* SEO optimizations
+* Automated delivery with Jenkins pipeline
+* Translations (from ngX-Rocket)
+* API lookup (from ngX-Rocket)
 
 # Getting started
+If you want to run and develop a local version, here's what you got to do after cloning the project from here. 
 
 1. Go to project folder and install dependencies:
  ```sh
@@ -14,10 +28,13 @@ version 4.0.0
  ```sh
  npm start
  ```
-
+ 
+ Start hacking!
+ 
 # Project structure
 
 ```
+dist-prerender/              prerendered javascript bundle build 
 dist/                        web app production build
 docs/                        project docs and coding guides
 e2e/                         end-to-end tests
@@ -30,13 +47,17 @@ src/                         project source code
 |  |- app-routing.module.ts  app routes
 |  +- ...                    additional modules and components
 |- assets/                   app assets (images, fonts, sounds...)
+|- docker/                   docker container definitions
 |- environments/             values for various build environments
 |- theme/                    app global scss variables and theme
 |- translations/             translations files
 |- index.html                html entry point
 |- main.scss                 global style entry point
 |- main.ts                   app entry point
+|- main-prerender.ts         prerendered app entry point
 |- polyfills.ts              polyfills needed by Angular
+|- robots.txt                robots.txt, pointing to sitemap.xml
+|- sitemap.xml               sitemap deployed to the application image
 +- test.ts                   unit tests entry point
 reports/                     test and coverage reports
 proxy.conf.js                backend proxy configuration
@@ -132,8 +153,6 @@ Development, build and quality processes are based on [angular-cli](https://gith
 # Dependencies
 
 TODO: Add all dependencies since 'ngx-rocket new'
-
-Using pace-progress, for the loading screen for the app, from: https://www.npmjs.com/package/pace-progress
 
 # Docker
 

@@ -1,12 +1,13 @@
-import { Inject, PLATFORM_ID } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { includes } from 'lodash';
-import { isPlatformBrowser } from '@angular/common';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
+import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
+import {includes} from 'lodash';
+import {isPlatformBrowser} from '@angular/common';
 
-import { Logger } from './logger.service';
+import {Logger} from './logger.service';
 import * as enUS from '../../translations/en-US.json';
 import * as daDK from '../../translations/da-DK.json';
+import enUS_2 from '../../translations/en-US.json';
+import daDK_2 from '../../translations/da-DK.json';
 
 const log = new Logger('I18nService');
 const languageKey = 'language';
@@ -32,8 +33,13 @@ export class I18nService {
               with window and localStorage */
               @Inject(PLATFORM_ID) private platformId: Object) {
     // Embed languages to avoid extra HTTP requests
-    translateService.setTranslation('English', enUS);
-    translateService.setTranslation('Dansk', daDK);
+    const merged_enUS = {};
+    const merged_daDK = {};
+    Object.assign(merged_enUS, enUS, enUS_2);
+    Object.assign(merged_daDK, daDK, daDK_2);
+
+    translateService.setTranslation('English', merged_enUS);
+    translateService.setTranslation('Dansk', merged_daDK);
   }
 
   /**
@@ -51,7 +57,7 @@ export class I18nService {
       .subscribe((event: LangChangeEvent) => {
         /* Avoid access to localStorage when rendering with SSR - need to refator to use an abstraction of localStorage
         instead. */
-        if (!isPlatformBrowser(this.platformId)) {
+        if (isPlatformBrowser(this.platformId)) {
           localStorage.setItem(languageKey, event.lang);
         }
       });

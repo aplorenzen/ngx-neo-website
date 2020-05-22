@@ -1,31 +1,68 @@
 {
-  "About": "Om",
-  "As many others with an educational background in programming, I started as a backend programmer. Only in recent years have I also picked up the frontend discipline, in my own time. When Angular 2 was released, I realized that typescript would be a great path for me, given my background. And it has been, I really enjoy Angular and the npm universe.": "",
-  "Awaiting connection...": "Afventer forbindelse...",
-  "Contact": "Kontakt",
-  "Fullstack and DevOps developer, Java, Spring, Angular, Docker": "Fullstack og DevOps udvikler - Java, Spring, Angular, Docker",
-  "Hello world !": "",
-  "I am quite seasoned here, having been on board since before the 1.0 release. And since 2016, I have been advocating using Docker in production. These days I basically wrap everything I do in Docker containers - it's a great time to be a developer.": "",
-  "I find myself loving the linux shell more and more with every passing year. With this in my belt, I am able to automate complex chains of tools and events.": "",
-  "I like to automate things. And sometime this requires more than shell scripting is proficient for, while still not being enough to pull the big weapons. Python allows me to connect almost any two ends, and automate some behaviour. Like": "",
-  "I started exploring Linux back in 2010, and it's been something of a romance ever since. I was raised on DOS and Windows, and was a bit intimidated by Linux at first. But it did not take long for me to awaken to the advantages of Linux and the immense universe of distros, tools and knowledge that exists.": "",
-  "Key Skills": "Kompetencer",
-  "Profile": "Profil",
-  "Since": "Siden",
-  "Spring, is a big framework - really big. And tying a lot of it together is Spring Boot. With this, I can set up self contained and scalable micro services and websites, in just about no time. And it just plays so well with Docker - it's a match made in silicon heaven.": "",
-  "The unix philosophy": "Unix filosofien",
-  "There's a lot of new languages landing in the development space these day, and a lot of them have valid use cases and are worth looking into. And still, java is in my opinion managing to stay current. With it's age old proposition of solving pretty much everything for you, pretty much everywhere.": "",
-  "To give you some idea about what I do best, I thought I would supply a list of what I consider my essential skills.": "",
-  "Version": "Version",
-  "application.name": "neoprime.it",
-  "definitely strikes a chord with me.": "",
-  "host": "vært",
-  "server, and push it to an": "server, og sender det til en",
-  "this project": "dette projekt",
-  "where I pull statistics from a": "hvor jeg henter statistik fra en ",
-  "Hey! The site is open source!": "Hey! Sitet er open source!",
-  "Hi! I'm Andreas. I am a software engineer, and you have arrived at my online resume. This site is all about me in my professional context. You have been warned.": "Hi! I'm Andreas. I am a software engineer, and you have arrived at my online resume. This site is all about me in my professional context. You have been warned.",
-  "here is, that I am full stack developer, that loves geeking out over build, test and deployment automation.": "here is, that I am full stack developer, that loves geeking out over build, test and deployment automation.",
-  "Currently I am operating at full time as Lead Developer at ": "Currently I am operating at full time as Lead Developer at ",
-  ". Which is working out pretty great for me, since I get to dive into a lot of interesting technology and work on  advancing a setup .. MORE...": ". Which is working out pretty great for me, since I get to dive into a lot of interesting technology and work on  advancing a setup .. MORE..."
+  "application": {
+    "name": "neoprime.it"
+  },
+  "navbar": {
+    "link": {
+      "skills": "Kompetencer",
+      "profile": "Profil",
+      "contact": "Kontakt"
+    }
+  },
+  "skills": {
+    "title": "Kompetencer",
+    "intro": "To give you some idea about what I do best, I thought I would supply a list of what I consider my essential skills.",
+    "docker": "I am quite seasoned here, having been on board since before the 1.0 release. And since 2016, I have been advocating using Docker in production. These days I basically wrap everything I do in Docker containers - it's a great time to be a developer.",
+    "bash": "I find myself loving the linux shell more and more with every passing year. With this in my belt, I am able to automate complex chains of tools and events. <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Unix_philosophy\" title=\"The Unix Philosophy\">The unix philosophy</a> definitely strikes a chord with me.",
+    "java": "There's a lot of new languages landing in the development space these day, and a lot of them have valid use cases and are worth looking into. And still, java is in my opinion managing to stay current. With it's age old proposition of solving pretty much everything for you, pretty much everywhere.",
+    "linux": "I started exploring Linux back in 2010, and it's been something of a romance ever since. I was raised on DOS and Windows, and was a bit intimidated by Linux at first. But it did not take long for me to awaken to the advantages of Linux and the immense universe of distros, tools and knowledge that exists.",
+    "angular": "As many others with an educational background in programming, I started as a backend programmer. Only in recent years have I also picked up the frontend discipline, in my own time. When Angular 2 was released, I realized that typescript would be a great path for me, given my background. And it has been, I really enjoy Angular and the npm universe.",
+    "springboot": "Spring, is a big framework - really big. And tying a lot of it together is Spring Boot. With this, I can set up self contained and scalable micro services and websites, in just about no time. And it just plays so well with Docker - it's a match made in silicon heaven.",
+    "python": "I like to automate things. And sometime this requires more than shell scripting is proficient for, while still not being enough to pull the big weapons. Python allows me to connect almost any two ends, and automate some behaviour. Like <a target=\"_blank\" href=\"https://github.com/aplorenzen/wildfly-es-reporter\" title=\"Wildfly Elasticsearch Reporter\">this project</a> where I pull statistics from a <a target=\"_blank\" title=\"Wildfly\" href=\"http://wildfly.org/\">Wildfly</a> server, and push it to an <a target=\"_blank\" title=\"Elasticsearch\" href=\"https://www.elastic.co/products/elasticsearch\">Elasticsearch</a> host.",
+    "javascript": ""
+  },
+  "profile": {
+    "header": "Profil",
+    "body": {
+      "intro": "Hi! My name is Andreas Lorenzen. I am a software engineer from Denmark, and you have arrived at my online resume. This site is all about me in my professional context. You have been warned. 🙂",
+      "tldr": "<strong>TL;DR</strong> here is, that I am full stack developer, with a passion for deployment and test automation. I have a broad experience, having touched a lot of technologies and spanned a lot of roles in my career, from developer to IT development manager. I am always working on improving my skills and technology overview, and I consider continuously educating myself essential to my craft.",
+      "paragraph1": "I am currently employed full time at <a href=\"https://www.netcompany.com/\" title=\"Netcompany Website\">Netcompany</a> as a Lead Developer. Here I get to dive into a lot of interesting technology, work with some bright minds and I get to have a lot of influence on the solutions that we build. As a Lead Developer, I am positioned between the customer, the development team and the technology stack. From this position I assist my customer with technology choices, solution designs and insight into how new technology can support their business.",
+      "paragraph2": "I always concern myself with the forward migration path of a solution, technology moves fast and waits for noone. A company that wants to stay relevant, should keep their solutions within range of where the current wave of new technology is breaking. This is also why I believe that for most business applications, maintainability should be a main concern.",
+      "paragraph3": "Since 2009 I have been in direct daily contact with the business or management group of my employers and customers. This has been a very educational journey for me, professionally and personally. And it has given me a lot of experience in meeting my customer, understanding their domain and working with them to shape and translate their ideas into applications and services that support and advance their business.",
+      "paragraph4": "My previous employment was with a company in the electronics repair and service industry. Developing internal systems and external integrations. This is where I really started accelerating my skills, and eventually got a good overview of the software development domain. I started as a developer, made senior and eventually became responsible for the internal development department. By this time the company was operating in all of Scandinavia. So I was fortunate, that while my skills would improve, the company would also grow and the challenges would change."
+    },
+    "link": {
+      "skills": "Kompetencer"
+    }
+  },
+  "footer": {
+    "title": "Kontakt",
+    "link": {
+      "github": "Hey! Sitet her er open source",
+      "jenkins": "Byg"
+    }
+  },
+  "banner": {
+    "intro": "Fullstack og DevOps udvikler, Java, Spring, Angular, Docker",
+    "link": {
+      "profile": "Profil",
+      "contact": "Kontakt"
+    }
+  },
+  "chuck": {
+    "title": "Tilfældig Chuck Norris Faktum"
+  },
+  "not-found": {
+    "title": "Åh nej dog! Der er ingen side her.",
+    "intro": "Hvor uheldigt. Det lader ikke til at der findes en webside for enden af den indtastede adresse.",
+    "register-issue": "Hvis du mener at der burde være en side her, så overvej at registrere et issue.",
+    "source-repo": "Hvis du mener at websiden mangler noget her, så hey! Sitet er open source, klon det, lav en rettelse og send en pull request.",
+    "home": "Tja, måske endte du bare her ved en fejltagelse, og vil egentlig bare navigere til startsiden?",
+    "link": {
+      "register-issue": "Registrer Issue",
+      "source-repo": "Kilde Repository",
+      "home": "Hjem"
+    }
+  },
+  "Since": "Siden"
 }

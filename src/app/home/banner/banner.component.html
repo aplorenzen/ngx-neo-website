@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
         <h1 class="text-uppercase">Andreas Lorenzen</h1>
-        <hr/>
+        <hr class="hr-dark"/>
       </div>
       <div class="col-lg-8 mx-auto">
-        <p class="text-faded mb-5" translate>Fullstack and DevOps developer, Java, Spring, Angular, Docker</p>
-        <a class="btn btn-primary btn-xl text-uppercase" [ngx-scroll-to]="'#profile'" translate>Profile</a>
-        <a class="btn btn-secondary text-dark btn-xl text-uppercase" [ngx-scroll-to]="'#contact'" translate>Contact</a>
+        <p class="text-faded mb-5">{{ "banner.intro" | translate }}</p>
+        <a class="btn btn-primary btn-xl text-uppercase" title="Profile, Andreas Lorenzen" [ngx-scroll-to]="'#profile'">{{ "banner.link.profile" | translate }}</a>
+        <a class="btn btn-secondary text-dark btn-xl text-uppercase" title="Contact, Andreas Lorenzen" [ngx-scroll-to]="'#contact'">{{ "banner.link.contact" | translate }}</a>
       </div>
     </div>
   </div>

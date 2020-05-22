@@ -10,5 +10,10 @@
     "test.ts",
     "**/*.spec.ts",
     "**/*.mock.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
+  }
 }
+
+// ng lint --type-check && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc */
